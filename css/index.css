@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Ubuntu&display=swap');
+
+* {
+    font-family: "Ubuntu", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #FFFFFF;
+    background-color: #B4001D;
+    width: 100%;
+}
+
+.header-link{
+    width: 200px;
+    padding-left: 20px;
+    display: inline-block;
+}
+
+.header-buttons {
+    float: right;
+    padding-right: 30px;
+}
+
+header a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+header button {
+    border: transparent;
+    background-color: #F77700;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+header button span {
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+main {
+    padding: 20px;
+    background-image: url(./../img/CHN861AC_C608_AC.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.cuadro-bienvenida {
+    background-color: rgba(239, 239, 239, 0.70);
+    padding: 20px;
+    margin: 0 auto;
+    width: 700px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.cuadro-bienvenida h2{
+    margin: 20px;
+    text-align: center;
+}
+
+.cuadro-bienvenida ul {
+    margin: 10px;
+    padding-left: 20px;
+}
+
+.cuadro-bienvenida a{
+    color: purple;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #F77700;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+.footer-resumen {
+    text-align: center;
+    padding: 5px;
+}
+
+.footer-contacto {
+    padding: 5px 20px;
+}
+
+footer button {
+    border: transparent;
+    background-color: #B4001D;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+footer button span {
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.footer-contacto a{
+    text-decoration: none;
+    color: #000000;
+}
