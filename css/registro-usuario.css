@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Ubuntu&display=swap');
+
+* {
+    font-family: "Ubuntu", sans-serif;
+}
+
+body {
+    background-image: url(./../img/background/CHN806AC_B77L_AC.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #FFFFFF;
+    background-color: #B4001D;
+    width: 100%;
+}
+
+.header-link{
+    padding-left: 20px;
+    display: inline-flex;
+    vertical-align: middle;
+    margin: 0 auto;
+}
+
+header h1 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.header-buttons {
+    float: right;
+    padding-right: 30px;
+}
+
+header a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+header button {
+    border: transparent;
+    background-color: #F77700;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+header button span {
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+
+#formRegister{
+    padding: 20px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 50%;
+    text-align: center;
+    background-color: rgba(235, 235, 238, 0.30);
+    border-radius: 10px;
+    width: 520px;
+}
+
+#infoBackgroundImage{
+    padding: 20px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 50%;
+    text-align: center;
+    background-image: linear-gradient(to bottom right, rgba(235, 235, 235, 0.30), #ffffff) !important;
+    border-radius: 10px;
+    width: 520px;
+    text-shadow: 1px 1px 1px #EBEBEB;
+}
+
+#formTitle {
+    text-shadow: 4px 4px 4px #EBEBEB;
+}
+
+#labelInput{
+    width: 100%;
+    background-color: rgba(180, 0, 29, 0.90);
+    color: #FFFFFF;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: 2px 2px 4px #FFF;
+}
+
+#labelInput input[class="textInput"]{
+    border: transparent;
+    border-radius: 5px;
+    width: 80%;
+    padding: 5px;
+}
+
+.textInput:focus{
+    transition-duration: 200ms;
+    transform: scale(1.1);
+}
+
+#labelInput ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#labelInput li {
+    display: inline-block;
+}
+
+input[type="radio"][id^="avatarCheck"] {
+    display: none;
+}
+
+#labelCheck {
+    padding: 10px;
+    display: block;
+    position: relative;
+    margin: 10px;
+    cursor: pointer;
+}
+  
+#labelCheck img {
+    height: 75px;
+    width: 75px;
+    border-radius: 5px;
+    transition-duration: 0.2s;
+    transform-origin: 50% 50%;
+    opacity: 50%;
+}
+
+:hover + #labelCheck img {
+    transform: scale(1.1);
+    opacity: 75%;
+}
+
+:checked + #labelCheck img {
+    transform: scale(1.2);
+    z-index: -1;
+    opacity: 100%;
+}
+
+#labelInput button{
+    border: transparent;
+    border-radius: 5px;
+    padding: 10px;
+    width: 90%;
+}
+
+#labelInput button span{
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+#buttonForm{
+    margin: 5px;
+}
+
+#buttonForm button {
+    transition-duration: 0.25s;
+    background-image: linear-gradient(to bottom right, #F77700, #ffffff) !important;
+}
+
+#buttonForm button:hover{
+    transform: scale(1.1);
+}
+
+footer{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.material-symbols-outlined.md-18 {
+    font-size: 18px;
+}
+
+/* Animation for the boxes where the inputs are */
+.animation:hover{
+    -webkit-animation: bgcolorchange 10s;
+    animation: 10s bgcolorchange;
+  }
+  @keyframes bgcolorchange {
+    0% {
+        background-color: #B4001D;
+    }
+    25% {
+        background-color: #F7A500;
+    }
+    50% {
+        background-color: #000000;
+    }
+    75% {
+        background-color: #F7A500;
+    }
+    100% {
+        background-color: #B4001D;
+    }
+}
+@-webkit-keyframes bgcolorchange {
+    0% {
+        background-color: #B4001D;
+    }
+    25% {
+        background-color: #F7A500;
+    }
+    50% {
+        background-color: #000000;
+    }
+    75% {
+        background-color: #F7A500;
+    }
+    100% {
+        background-color: #B4001D;
+    }
+}
+
+#nameError, #usernameError, #emailError, #passwordError, #confirmPasswordError{
+    display: none;
+}
+
+footer {
+    background-color: #B4001D;
+    color: #FFFFFF;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+.links-footer {
+    color: #FFFFFF;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.links-footer h4 {
+    margin: 0px 0px 0px 0px;
+    padding-left: 20px;
+}
+
+.links-footer ul {
+    list-style-type: none;
+    display: inline-flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.links-footer ul li {
+    padding: 5px;
+}
+
+.links-footer ul li a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.info-footer {
+    text-align: center;
+}
+
+.info-footer p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.info-footer a {
+    color: #F77700;
+    text-decoration: none;
+}

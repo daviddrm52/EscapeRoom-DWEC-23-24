@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url(./../img/background/CHN861AC_C608_AC.png);
+    background-image: url(./../img/background/CHN460AC_C601_AC_&_CHN518AC_C602_AC_Alt.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -57,7 +57,7 @@ header button span {
     vertical-align: middle;
 }
 
-.cuadro-bienvenida {
+.info-escape-rooms {
     background-color: rgba(239, 239, 239, 0.70);
     padding: 20px;
     margin: 0 auto;
@@ -66,21 +66,6 @@ header button span {
     border-radius: 5px;
     margin-top: 20px;
     margin-bottom: 20px;
-}
-
-.cuadro-bienvenida h2{
-    margin: 20px;
-    text-align: center;
-}
-
-.cuadro-bienvenida ul {
-    margin: 10px;
-    padding-left: 20px;
-}
-
-.cuadro-bienvenida a{
-    color: purple;
-    text-decoration: none;
 }
 
 footer {
