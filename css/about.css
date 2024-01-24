@@ -1,7 +1,7 @@
-/* CSS especifico para la pagina escape-room-1.html */
+/* CSS especifico para la pagina about.html */
 
 body {
-    background-image: url(./../img/background/CHN460AC_C601_AC_&_CHN518AC_C602_AC_Alt.png);
+    background-image: url(./../img/background/CHN576AC_C101_AC.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -9,7 +9,7 @@ body {
     margin: 0;
 }
 
-.habitacion-juego {
+.sobre-nosotros {
     background-color: rgba(239, 239, 239, 0.70);
     padding: 20px;
     margin: 0 auto;
