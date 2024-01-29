@@ -5,17 +5,17 @@ const DB_VERSION = 1;
 var db;
 var opened = false;
 //Cuando el usuario quiera enviar el formulario
-var datosInicioSesion = document.querySelector("#iniciarSesionFormulario");
+var botonIniciarSesion = document.querySelector("#botonFormularioInicioSesion");
 
+//Variable donde se almacena los datos de los usuarios extraidos al cargar la pagina
 var datosUsuarios;
 
 /* Creación y obertura de la base de datos */
-
 function openCreateDatabase(onDBCompleted) {
     if(opened){
         db.close();
         opened = false;
-    }
+    };
     
     // Abriendo la base de datos
     var request = indexedDB.open(database, DB_VERSION);
@@ -56,7 +56,7 @@ function openCreateDatabase(onDBCompleted) {
 function datosUsuariosSesion(){
     openCreateDatabase(function(db){
         conseguirDatosUsuarios(db);
-    })
+    });
 };
 
 function conseguirDatosUsuarios(db){
@@ -99,3 +99,102 @@ function lecturaDatos(resultado){
 window.addEventListener('load', (event) => {
     datosUsuariosSesion();
 })
+
+// Event Listener cuando el usuario procede a iniciar sesión
+botonIniciarSesion.addEventListener('click', (event) => {
+    verificarUsuario();
+});
+
+// Funcion para verificar los datos puestos por el usuario
+function verificarUsuario(){
+    //En caso de que algo vaya mal
+    var errorDetectado = true;
+    //Variables para los campos de texto
+    var nombreUsuarioInicioSesion = document.getElementById("nombreUsuarioInicioSesion");
+    var contrasenaInicioSesion = document.getElementById("contrasenaInicioSesion");
+    //Variables para los errores (en caso de que el usuario no exista, o la contraseña sea erronea)
+    var nombreUsuarioInicioSesionError = document.getElementById("nombreUsuarioInicioSesionError");
+    var contrasenaInicioSesionError = document.getElementById("contrasenaInicioSesionError");
+    //Variable que almacena los datos del usuario que ha iniciado sesion
+    var informacionUsuario;
+
+    // Validando si el campo del usuario esta vacio
+    if(nombreUsuarioInicioSesion.value.trim() === ''){
+        nombreUsuarioInicioSesionError.innerText = "¡El campo del nombre de usuario esta vacío!";
+        nombreUsuarioInicioSesionError.style.display = "block";
+        errorDetectado = true;
+    } else {
+        nombreUsuarioInicioSesionError.style.display = "none";
+        errorDetectado = false;
+    };
+
+    //Validando si el campo del usuario esta vacio
+    if(contrasenaInicioSesion.value.trim() === ''){
+        contrasenaInicioSesionError.innerText = "¡El campo de la contraseña esta vacío!";
+        contrasenaInicioSesionError.style.display = "block";
+        errorDetectado = true;
+    } else {
+        contrasenaInicioSesionError.style.display = "none";
+        errorDetectado = false;
+    };
+
+    // Encriptando la contraseña (para poder compararlas)
+    var hash = CryptoJS.MD5(contrasenaInicioSesion.value);
+    var contrasenaEncriptada = hash.toString();
+
+    //Realizamos la busqueda en la base de datos del usuario que se ha insertado
+    for (let i = 0; i < datosUsuarios.length; i++){
+        if(nombreUsuarioInicioSesion.value === datosUsuarios[i].nombreUsuario){
+            console.log("Nombre de usuario encontrado");
+            informacionUsuario = datosUsuarios[i];
+            nombreUsuarioInicioSesionError.style.display = "none";
+            errorDetectado = false;
+            break;
+        } else {
+            console.log("Aún en la busqueda, registros buscados: "+i);
+            nombreUsuarioInicioSesionError.innerText = "¡El nombre de usuario no es correcto o no existe!";
+            nombreUsuarioInicioSesionError.style.display = "block";
+            errorDetectado = true;
+        };
+    };    
+
+    //En caso de que un error haya sido detectado en los campos (si estan vacios o no son correctos)
+    if (errorDetectado){
+        console.log("Errores detectados, saliendo...");
+        db.close();
+        opened = false;
+        return;
+    } else {
+        console.log("Todo correcto HL7526");
+    };
+
+    console.log(informacionUsuario);
+
+    //Para poder comprobar la contraseña introducida con la registrada
+    if(informacionUsuario == null){
+        console.log("No hay informacion del usuario, esto es malo");
+    } else {
+        if(contrasenaEncriptada === informacionUsuario.contrasena){
+            console.log("La contraseña es correcta, todo bien");
+            contrasenaInicioSesionError.style.display = "none";
+            errorDetectado = false;
+            sessionStorage.setItem('id', informacionUsuario.id);
+            sessionStorage.setItem('nombreUsuario', informacionUsuario.nombreUsuario);
+            sessionStorage.setItem("administrador", informacionUsuario.administrador);
+
+            //Verificar si el nuevo usuario es administrador
+            if(informacionUsuario.administrador){
+                //Redirigido a la pagina de administración
+                window.location.replace("./index_admin.html");
+            } else {
+                //Redirigido al inicio normal(si es un usuario normal)
+                window.location.replace("./index.html");
+            };
+        } else {
+            console.log("Contraseña no coincide, no es correcta");
+            contrasenaInicioSesionError.innerText = "¡La contraseña no es correcta!";
+            contrasenaInicioSesionError.style.display = "block";
+            errorDetectado = true;
+        };
+    };
+}
