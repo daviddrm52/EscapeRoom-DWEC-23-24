@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Escape Room</title>
+    <title>Tu pagina personal - Escape Room</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="shortcut icon" href="./img/logo/base_logo_mobile.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/common-css.css">
@@ -19,7 +19,97 @@
         </div>
     </header>
     <main>
-        <h1>En construcción</h1>
+        <div id="pantallaInformacionUsuario">
+            <div id="informacionUsuario">
+                <h2>Tu información de usuario</h2>
+                <div>
+                    <ul>
+                        <li><b>Nombre: </b> <span id="muestraNombre"></span></li>
+                        <li><b>Nombre de usuario:</b> <span id="muestraNombreUsuario"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="containerEliminarUsuarioSeleccionado">
+            <div id="informacionUsuario">
+                <h3><span class="material-symbols-outlined">warning</span></h3>
+                <h4>¿Estas seguro que quieres eliminar tu cuenta?</h4>
+                <ul>
+                    <li><button id="eliminarUsuario"> Eliminar cuenta</button></li>
+                    <li><button id="cancelarEliminarUsuario">Cancelar</button></li>
+                </ul>
+            </div>
+        </div>
+        <div id="containerActualizarContrasena">
+            <div id="informacionUsuario">
+                <h2>Actualizar la contraseña de tu cuenta</h2>
+                <div class="labelInput">
+                    <label for="nuevaContrasena">Nueva contraseña: </label>
+                    <p><input type="password" name="nuevaContrasena" id="nuevaContrasena" class="textInput" placeholder="Nueva contraseña..."></p>
+                    <small id="nuevaContrasenaError"></small>
+                    <small id="nuevaContrasenaIgualError"></small>
+                </div>
+                <div class="labelInput">
+                    <label for="confirmarNuevaContrasena">Confirmar nueva contraseña: </label>
+                    <p><input type="password" name="confirmarNuevaContrasena" id="confirmarNuevaContrasena" class="textInput" placeholder="Confirmar nueva contraseña..."></p>
+                    <small id="confirmarNuevaContrasenaError"></small>
+                    <small id="confirmarNuevaContrasenaIgualError"></small>
+                </div>
+                <div class="labelInput">
+                    <div id="buttonForm">
+                        <button id="actualizarContrasena">Actualizar contraseña</button>
+                    </div>
+                    <div id="buttonForm">
+                        <button id="cancelarActualizarContrasena">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="containerActualizarDatosPersonales">
+            <div id="informacionUsuario">
+                <h2>Actualizar tus datos personales</h2>
+                <div class="labelInput">
+                    <label for="nuevoNombre">Nombre: </label>
+                    <p><input type="text" name="nuevoNombre" id="nuevoNombre" class="textInput" placeholder="Nuevo nombre..."></p>
+                    <small id="nuevoNombreError"></small>
+                </div>
+                <div class="labelInput">
+                    <label for="nuevoNombreUsuario">Nombre de usuario: </label>
+                    <p><input type="text" name="nuevoNombreUsuario" id="nuevoNombreUsuario" class="textInput" placeholder="Nuevo nombre de usuario..."></p>
+                    <small id="nuevoNombreUsuarioError"></small>
+                </div>
+                <div class="labelInput">
+                    <div id="buttonForm">
+                        <button id="actualizarDatosPersonales">Actualizar datos personales</button>
+                    </div>
+                    <div id="buttonForm">
+                        <button id="cancelarActualizarDatosPersonales">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="opcionesUsuario">
+            <div id="informacionUsuario">
+                <h2>¿Que quieres hacer con tu cuenta?</h2>
+                <div>
+                    <ul>
+                        <li><button disabled id="mostrarFormularioDatosPersonales">Actualizar datos personales</button></li>
+                        <li><button disabled id="mostrarFormularioContrasena">Cambiar contraseña</button></li>
+                        <li><button disabled>Proximamente...</button></li>
+                    </ul>
+                    <ul>
+                        <li><button disabled id="mostrarEliminacionUsuario">Eliminar cuenta</button></li>
+                    </ul>
+                    <ul>
+                        <li><button id="cerrarSesionUsuario">Cerrar sesión</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="informacionFondo">
+            <b>Imagen de fondo: </b>
+            El primer C600-308 de Air Chiquin (CHN630AC, <i>C600-300</i> ) volando junto al primer C600-802 de Air Chiquin (CHN860AC, <i>C600-800</i> ).
+        </div>
     </main>
     <footer>
         <div>
@@ -39,7 +129,7 @@
             </div>
         </div>
     </footer>
-    <script src="./js/index.js"></script>
+    <script src="./js/pagina-usuario.js"></script>
     <script src="./js/usuario-conectado.js"></script>
 </body>
 </html>

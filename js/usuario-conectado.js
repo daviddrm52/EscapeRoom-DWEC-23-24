@@ -7,6 +7,7 @@ var administradorSession = sessionStorage.getItem('administrador');
 var botonInicioSesion = document.querySelector("#botonInicioSesion");
 var iconoBotonInicioSesion = document.querySelector("#iconoBotonInicioSesion");
 var linkInicioSesion = document.querySelector("#linkInicioSesion");
+var linkInicioSesionFooter = document.querySelector("#linkInicioSesionFooter");
 
 if(nombreUsuarioSession == null) {
     botonInicioSesion.innerText = "";
@@ -15,4 +16,6 @@ if(nombreUsuarioSession == null) {
     botonInicioSesion.innerText = nombreUsuarioSession;
     iconoBotonInicioSesion.innerText = "manage_accounts";
     linkInicioSesion.href = "./pagina-usuario.html";
+    linkInicioSesionFooter.href = "./pagina-usuario.html";
+    linkInicioSesionFooter.innerText = "Pagina personal"
 };

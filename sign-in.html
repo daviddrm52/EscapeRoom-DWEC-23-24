@@ -15,7 +15,7 @@
             <h1><a href="./index.html"><img src="./img/logo/base_logo_mobile.png" alt="web_logo" height="25px"> Escape Room AC</a></h1>
         </div>
         <div class="header-buttons">
-            <a href="./sign-in.html"><button><span class="material-symbols-outlined">login</span></button></a>
+            <a id="linkInicioSesion" href="./sign-in.html"><button><span id="iconoBotonInicioSesion" class="material-symbols-outlined">login</span><span id="botonInicioSesion"></span></button></a>
         </div>
     </header>
     <main>
@@ -62,9 +62,10 @@
             <div class="links-footer">
                 <h4>Información, de un vistazo</h4>
                 <ul>
-                    <li><a href="./sign-in.html">Iniciar sesión</a></li>
+                    <li><a id="linkInicioSesionFooter" href="./sign-in.html">Iniciar sesión</a></li>
                     <li><a href="./about.html">Sobre nosotros</a></li>
                     <li><a href="./info-escape-rooms.html">Escape rooms disponibles</a></li>
+                    <li><a href="#">Sección de administración</a></li>
                 </ul>
             </div>
             <div class="info-footer">
@@ -77,5 +78,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/md5.js"></script>
     <script src="./js/sign-in.js"></script>
+    <script src="./js/usuario-conectado.js"></script>
 </body>
 </html>
