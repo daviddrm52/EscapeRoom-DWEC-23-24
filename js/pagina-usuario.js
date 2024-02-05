@@ -139,7 +139,7 @@ botonMostrarEliminacionUsuario.addEventListener('click', (event) => {
 
 //Boton que quitará el formulario de eliminación
 botonCancelarEliminarUsuario.addEventListener('click', (event) => {
-    var containerEliminarUsuario = document.getElementById("containerEliminarUsuarioSeleccionado");ç
+    var containerEliminarUsuario = document.getElementById("containerEliminarUsuarioSeleccionado");
     containerEliminarUsuario.style.display = "none";
     pantallaInformacionUsuario.style.display = "block";
     opcionesUsuario.style.display = "block";
@@ -212,9 +212,120 @@ botonCancelarActualizarDatosPersonales.addEventListener('click', (event) => {
 });
 
 botonActualizarDatosPersonales.addEventListener('click', (event) => {
-    botonActualizarDatosPersonales();
+    actualizarDatosPersonales();
 });
 
+function actualizarDatosPersonales() {
+    openCreateDatabase(function(db){
+        actualizarDatosUsuarioConectado(db);
+    });
+};
 
+function actualizarDatosUsuarioConectado(db){
+    //En caso de que algun error ocurra
+    var errorDetectado = true;
+    //Campos del formulario
+    var idUsuario = sessionStorage.getItem('id');
+    var nombreActualizado = document.getElementById("nuevoNombre");
+    var nombreUsuarioActualizado = document.getElementById("nuevoNombreUsuario");
+    //Mensajes de error en caso de que algo no pueda ser validado
+    var errorNuevoNombre = document.getElementById("nuevoNombreError");
+    var errorNuevoNombreUsuario = document.getElementById("nuevoNombreUsuarioError");
+
+    //Validación de los nuevos datos para el usuario
+    //Validando el nuevo nombre
+    if(nombreActualizado.value.trim() === ''){
+        errorNuevoNombre.innerText = "¡El campo del nuevo nombre esta vacío!";
+        errorNuevoNombre.style.display = "block";
+        errorDetectado = true;
+    } else {
+        errorNuevoNombre.style.display = "none";
+        errorDetectado = false;
+    };
+    //Validando el nuevo nombre de usuario
+    if(nombreUsuarioActualizado.value.trim() === ''){
+        errorNuevoNombreUsuario.innerText = "¡El campo del nuevo nombre de usuario esta vacío!";
+        errorNuevoNombreUsuario.style.display = "block";
+        errorDetectado = true;
+    } else {
+        errorNuevoNombreUsuario.style.display = "none";
+        errorDetectado = false;
+    };
+    //En caso de que un error se haya detectado en los campos
+    if (errorDetectado){
+        console.log("Errores detectados, saliendo...");
+        db.close();
+        opened = false;
+        return;
+    } else {
+        console.log("Todo correcto Devola y Popola");
+    };
+    var object = {
+        id: parseInt(idUsuario),
+        nombre: nombreActualizado.value,
+        nombreUsuario: nombreUsuarioActualizado.value,
+        contrasena: contrasenaBueno,
+        administrador: administradorBueno
+    };
+
+    var tx = db.transaction(DB_STORE_NAME, "readwrite");
+    var store = tx.objectStore(DB_STORE_NAME);
+
+    //Actualiza los valores que tenemos de nuestro usuario, sin eliminar ninguno de los anteriores
+    request = store.put(object);
+
+    request.onsuccess = function (event) {
+        console.log("actualizarDatosUsuarioConectado; datos actualizados correctamente");
+
+        //Operaciones que vamos a realizar al actualizar los datos del usuario
+        sessionStorage.removeItem('nombreUsuario');
+        sessionStorage.setItem('nombreUsuario', nombreUsuarioActualizado.value);
+        nombreActualizado.value = "";
+        nombreUsuarioActualizado.value = "";
+        var containerActualizarDatosPersonales = document.getElementById("containerActualizarDatosPersonales");
+        containerActualizarDatosPersonales.style.display = "none";
+        window.location.reload();
+    };
+
+    request.onerror = function (event) {
+        console.error("actualizarDatosUsuarioConectado: error actualizando los datos del usuario ", this.error);
+    };
+
+    tx.oncomplete = function() {
+        console.log("actualizarDatosUsuarioConectado: tx completado, todo bien");
+        db.close();
+        opened = false;
+    };
+};
+
+/* Sección de modificación de la contraseña (sin afectar a los otros datos) */
+
+botonMostrarFormularioContrasena.addEventListener('click', (event) => {
+    var containerActualizarContrasena  = document.getElementById("containerActualizarContrasena");
+    containerActualizarContrasena.style.display = "block";
+    pantallaInformacionUsuario.style.display = "none";
+    opcionesUsuario.style.display = "none";
+});
+
+botonCancelarActualizarContrasena.addEventListener('click', (event) => {
+    var containerActualizarContrasena  = document.getElementById("containerActualizarContrasena");
+    containerActualizarContrasena.style.display = "none";
+    pantallaInformacionUsuario.style.display = "block";
+    opcionesUsuario.style.display = "block";  
+});
+
+botonActualizarContrasena.addEventListener('click', (event) => {
+    actualizarContrasena();
+});
+
+function actualizarContrasena() {
+    openCreateDatabase(function(db){
+        actualizarContrasenaUsuarioConectado(db);
+    });
+};
+
+function actualizarContrasenaUsuarioConectado(db){
+
+}
 
 /* Pendiente actualizar contraseña, actualizar datos usuario y eliminación de la cuenta */
