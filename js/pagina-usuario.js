@@ -127,4 +127,94 @@ document.getElementById("cerrarSesionUsuario").addEventListener('click', (event)
     window.location.replace("./index.html");
 });
 
+/* Sección de eliminación de usuario que esta conectado */
+
+//Boton que muestra la confirmación que queremos eliminar nuestro usuario
+botonMostrarEliminacionUsuario.addEventListener('click', (event) => {
+    var containerEliminarUsuario = document.getElementById("containerEliminarUsuarioSeleccionado");
+    containerEliminarUsuario.style.display = "block";
+    pantallaInformacionUsuario.style.display = "none";
+    opcionesUsuario.style.display = "none";
+});
+
+//Boton que quitará el formulario de eliminación
+botonCancelarEliminarUsuario.addEventListener('click', (event) => {
+    var containerEliminarUsuario = document.getElementById("containerEliminarUsuarioSeleccionado");ç
+    containerEliminarUsuario.style.display = "none";
+    pantallaInformacionUsuario.style.display = "block";
+    opcionesUsuario.style.display = "block";
+});
+
+//Boton de confirmación de eliminación de usuario (este si que lo elimina)
+botonEliminarUsuario.addEventListener('click', (event) => {
+    eliminarUsuario();
+});
+
+//Funcion para eliminar el usuario
+function eliminarUsuario(){
+    openCreateDatabase(function(db){
+        eliminarUsuarioConectado(db);
+    });
+};
+
+//Funcion que elimina el usuario que esta conectado
+function eliminarUsuarioConectado(event){
+    console.log("eliminarUsuarioConectado");
+    var idUsuario = sessionStorage.getItem('id');
+
+    openCreateDatabase(function(db){
+        console.log(idUsuario);
+        var tx = db.transaction(DB_STORE_NAME, "readwrite");
+        var store = tx.objectStore(DB_STORE_NAME);
+
+        //Eliminando al usuario en la ObjectStore
+        var request = store.delete(parseInt(idUsuario));
+
+        request.onsuccess = function (event) {
+            console.log("eliminarUsuarioConectado: usuario con id="+idUsuario+" eliminado correctamente");
+
+            //Operaciones que se van a realizar despues de la eliminación del usuario
+            //Se vuelve al inicio y se limpia el sessionStorage
+            sessionStorage.clear();
+            window.location.replace("./index.html");
+        };
+
+        //Si ocurre un error, entrará aqui
+        request.onerror = function(event){
+            console.error("eliminarUsuarioConectado: error eliminando el usuario: ", event.target.errorCode);
+        };
+
+        //Si todo ha ido bien, se cerrará la base de datos y se habra completado la operación
+        tx.oncomplete = function(){
+            console.log("eliminarUsuarioConectado: tx completado, todo bien");
+            db.close();
+            opened = false;
+        };
+    });
+};
+
+/* Sección de modificación de datos personales (Exceptuando la contraseña) */
+
+botonMostrarFormularioDatosPersonales.addEventListener('click', (event) => {
+    var containerActualizarDatosPersonales = document.getElementById("containerActualizarDatosPersonales");
+    containerActualizarDatosPersonales.style.display = "block";
+    pantallaInformacionUsuario.style.display = "none";
+    opcionesUsuario.style.display = "none";
+    document.getElementById("nuevoNombre").value = nombreBueno;
+    document.getElementById("nuevoNombreUsuario").value = nombreUsuarioBueno;
+});
+
+botonCancelarActualizarDatosPersonales.addEventListener('click', (event) => {
+    var containerActualizarDatosPersonales = document.getElementById("containerActualizarDatosPersonales");
+    containerActualizarDatosPersonales.style.display = "none";
+    pantallaInformacionUsuario.style.display = "block";
+    opcionesUsuario.style.display = "block";
+});
+
+botonActualizarDatosPersonales.addEventListener('click', (event) => {
+    botonActualizarDatosPersonales();
+});
+
+
+
 /* Pendiente actualizar contraseña, actualizar datos usuario y eliminación de la cuenta */
