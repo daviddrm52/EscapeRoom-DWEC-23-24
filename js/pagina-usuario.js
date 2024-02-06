@@ -195,6 +195,7 @@ function eliminarUsuarioConectado(event){
 
 /* Sección de modificación de datos personales (Exceptuando la contraseña) */
 
+//Boton para mostrar el formulario de actualizar datos personales
 botonMostrarFormularioDatosPersonales.addEventListener('click', (event) => {
     var containerActualizarDatosPersonales = document.getElementById("containerActualizarDatosPersonales");
     containerActualizarDatosPersonales.style.display = "block";
@@ -204,6 +205,7 @@ botonMostrarFormularioDatosPersonales.addEventListener('click', (event) => {
     document.getElementById("nuevoNombreUsuario").value = nombreUsuarioBueno;
 });
 
+//Boton para cancelar y ocultar el formulario de actualizar datos personales
 botonCancelarActualizarDatosPersonales.addEventListener('click', (event) => {
     var containerActualizarDatosPersonales = document.getElementById("containerActualizarDatosPersonales");
     containerActualizarDatosPersonales.style.display = "none";
@@ -325,7 +327,109 @@ function actualizarContrasena() {
 };
 
 function actualizarContrasenaUsuarioConectado(db){
+    //En caso de que haya un error en los campos del formulario
+    var errorDetectado = true;
+    //Campos del formulario
+    var idUsuario = sessionStorage.getItem('id');
+    var contrasenaActualizado = document.getElementById("nuevaContrasena");
+    var confirmarContrasenaActualizado = document.getElementById("confirmarNuevaContrasena");
+    //Mensajes de error en caso de que algo no este bien como que la contraseña no cumple los requisitos
+    var errorNuevaContrasena = document.getElementById("nuevaContrasenaError");
+    var errorConfirmarNuevaContrasena = document.getElementById("confirmarNuevaContrasenaError");
+    //Mensajes de error en caso de que las contraseñas no coincidan
+    var errorNuevaContrasenaIgual = document.getElementById("nuevaContrasenaIgualError");
+    var errorConfirmarNuevaContrasenaIgual = document.getElementById("confirmarNuevaContrasenaIgualError");
+    //Validación de la nueva contraseña
+    //Verificando si las 2 contraseñas coinciden
+    if(contrasenaActualizado.value !== confirmarContrasenaActualizado.value){
+        errorNuevaContrasenaIgual.innerText = "¡La contraseña no coincide!";
+        errorConfirmarNuevaContrasenaIgual.innerText = "¡La contraseña no coincide!";
+        errorNuevaContrasenaIgual.style.display = "block";
+        errorConfirmarNuevaContrasenaIgual.style.display = "block";
+        errorDetectado = true;
+    } else {
+        errorNuevaContrasenaIgual.style.display = "none";
+        errorConfirmarNuevaContrasenaIgual.style.display = "none";
+        errorDetectado = false;
+    };
+    //Validando la primera contraseña
+    if(contrasenaActualizado.value.trim() === ''){
+        errorNuevaContrasena.innerText = "¡El campo de la nueva contraseña esta vacío!";
+        errorNuevaContrasena.style.display = "block";
+        errorDetectado = true;
+    } else if (!verificacionContrasena(contrasenaActualizado.value)){
+        errorNuevaContrasena.innerText = "¡La nueva contraseña no cumple los requisitos!";
+        errorNuevaContrasena.style.display = "block";
+        errorDetectado = true;
+    } else {
+        errorNuevaContrasena.style.display = "none";
+        errorDetectado = false;
+    };
+    //Validando el campo de confirmación de la nueva contraseña
+    if(confirmarContrasenaActualizado.value.trim() === ''){
+        errorConfirmarNuevaContrasena.innerText = "¡El campo de confirmación de la nueva contraseña esta vacío!";
+        errorConfirmarNuevaContrasena.style.display = "block";
+        errorDetectado = true;
+    } else if (!verificacionContrasena(confirmarContrasenaActualizado.value)){
+        errorConfirmarNuevaContrasena.innerText = "¡La nueva contraseña no cumple los requisitos!";
+        errorConfirmarNuevaContrasena.style.display = "block";
+        errorDetectado = true;
+    } else {
+        errorConfirmarNuevaContrasena.style.display = "none";
+        errorDetectado = false;
+    };
+    //En caso de que un error se haya detectado en los campos
+    if (errorDetectado){
+        console.log("Errores detectados, saliendo...");
+        db.close();
+        opened = false;
+        return;
+    } else {
+        console.log("Todo correcto G-LSAB");
+    };
+    //Para encriptar la nueva contraseña
+    var hash = CryptoJS.MD5(contrasenaActualizado.value);
+    //Guarda los datos en un array para actualizar los datos de la base de datos
+    var object = {
+        id: parseInt(idUsuario),
+        nombre: nombreBueno,
+        nombreUsuario: nombreUsuarioBueno,
+        contrasena: hash.toString(),
+        administrador: administradorBueno
+    };
 
-}
+    var tx = db.transaction(DB_STORE_NAME, "readwrite");
+    var store = tx.objectStore(DB_STORE_NAME);
 
-/* Pendiente actualizar contraseña, actualizar datos usuario y eliminación de la cuenta */
+    //Actualiza los datos del usuario (unicamente la contraseña)
+    request = store.put(object);
+
+    request.onsuccess = function (event) {
+        console.log("actualizarContrasenaUsuarioConectado: Contraseña actualizada correctamente");
+
+        //Operaciones que vamos a hacer despues de actualizar la contraseña del usuario
+        contrasenaActualizado.value = "";
+        confirmarContrasenaActualizado.value = "";
+        var containerActualizarContrasena  = document.getElementById("containerActualizarContrasena");
+        containerActualizarContrasena.style.display = "none";
+        window.location.reload();
+    };
+
+    request.onerror = function (event) {
+        console.error("actualizarContrasenaUsuarioConectado: error actualizando la contraseña: ", this.error);
+    };
+
+    tx.oncomplete = function() {
+        console.log("actualizarContrasenaUsuarioConectado: tx completado, todo bien");
+        db.close();
+        opened = false;
+    };
+};
+
+//Para verificar que las contraseñas tienen los requisitos minimos
+function verificacionContrasena(input){
+    const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+    return re.test(String(input)); //Will return true or false
+};
+
+/* Pagina de usuario funcional */
