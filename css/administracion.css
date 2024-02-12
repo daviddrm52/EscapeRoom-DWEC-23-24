@@ -1,0 +1,81 @@
+/* CSS especifico para la pagina administracion.html */
+
+body {
+    background-image: url(./../img/background/S-28-02_CE60_ROChAF.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
+
+.usuarios-registrados {
+    background-color: rgba(239, 239, 239, 0.7);
+    padding: 20px;
+    margin: 0 auto;
+    width: 700px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.usuarios-registrados h1 {
+    text-align: center;
+}
+
+table{
+    text-align: center;
+    border: 2px solid #FFFFFF;
+    padding: 10px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+}
+
+th{
+    padding: 5px;
+    background-color: #FFFFFF;
+    border: 2px solid #B4001D;
+    height: 30px;
+}
+
+td {
+    padding: 5px;
+    background-color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    height: 30px;
+}
+
+td:hover{
+    background-color: #F7A500;
+}
+
+td button {
+    background-color: #FFFFFF;
+    border: transparent;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: not-allowed;
+    margin: 2px
+}
+
+.informacion-extra{
+    background-color: rgba(239, 239, 239, 0.7);
+    padding: 20px;
+    margin: 0 auto;
+    width: 700px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.informacion-extra h2 {
+    text-align: center;
+}
+
+.menu-informacion-extra button{
+    border: transparent;
+    border-radius: 5px;
+    background-color: #F7A500;
+    padding: 10px;
+    width: 200px;
+}
