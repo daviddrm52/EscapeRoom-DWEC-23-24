@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Ubuntu&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-image: url(./../img/ahorcado/CHN576AC_&_CHN860AC.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+main {
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.contenedor-titulo {
+    background-color: rgba(241, 203, 210, 0.75);
+    border-radius: 10px;
+    width: 500px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+.contenedor {
+    background-color: rgba(241, 203, 210, 0.75);
+    border-radius: 10px;
+    width: 550px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    perspective: 1000px;
+}
+
+.contenedor-inicio {
+    background-color: rgba(241, 203, 210, 0.75);
+    border-radius: 10px;
+    width: 500px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+#contenedor-derrota {
+    background-color: rgba(241, 203, 210, 0.75);
+    border-radius: 10px;
+    width: 500px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    display: none;
+}
+
+#contenedor-derrota img{
+    border-radius: 10px;
+    width: 200px;
+    margin: 10px;
+}
+
+#contenedor-victoria {
+    background-color: rgba(241, 203, 210, 0.75);
+    border-radius: 10px;
+    width: 500px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    display: none;
+}
+
+.contenedor-inicio button{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #F7A500;
+    color: #000000;
+    border: transparent;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.contenedor-reinicio {
+    background-color: rgba(241, 203, 210, 0.75);
+    border-radius: 10px;
+    width: 500px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    display: none;
+}
+
+.contenedor-reinicio button{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #F7A500;
+    color: #000000;
+    border: transparent;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.contenedor-tiempo {
+    background-color: rgba(241, 203, 210, 0.75);
+    border-radius: 10px;
+    width: 500px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size: large;
+    display: none;
+}
+
+.contenedor-ayuda{
+    background-color: rgba(241, 203, 210, 0.75);
+    border-radius: 10px;
+    width: 500px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+.contenedor-muestra{
+    background-color: rgba(241, 203, 210, 0.75);
+    border-radius: 10px;
+    width: 500px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    display: none;
+}
+
+.contenedor-muestra ul {
+    list-style-type: none;
+}
+
+.contenedor-muestra ul li {
+    padding: 5px;
+}
+
+.contenedor-muestra button {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #F7A500;
+    color: #000000;
+    border: transparent;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.contenedor-palabras{
+    background-color: rgba(241, 203, 210, 0.75);
+    border-radius: 10px;
+    width: 500px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+.contenedor-palabras button{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #F7A500;
+    color: #000000;
+    border: transparent;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.contenedor-ayuda div {
+    padding: 10px;
+}
+
+.letra{
+    background-color: #28282c;
+    height: 35px;
+    width: 35px;
+    margin: 3px;
+    display: inline-block;
+    text-align: center;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+.letra.especial{
+    width: 123px;
+}
+
+.letra.correcto {
+    background-color: #008000;
+}
+
+.letra.error {
+    background-color: #B4001D;
+}
+
+.letra:not(.ocupado):hover{
+    cursor: pointer;
+    transform: scale(1.20);
+}
+
+.leyenda .letra:not(.ocupado):hover{
+    cursor: default;
+    transform: scale(1);
+}
+
+.palabraSecreta{
+    text-align: center;
+    font-size: 30px;
+    height: 40px;
+    width: 550px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+p.texto {
+    margin: 5px 0;
+}
+
+p.texto span {
+    color: #B4001D;
+}
+
+.error-ayuda, .derrota {
+    color: #B4001D;
+}
+
+.correcto-ayuda, .victoria {
+    color: #008000;
+}
+
+.contenedor-ultima-partida {
+    background-color: rgba(241, 203, 210, 0.75);
+    border-radius: 10px;
+    width: 500px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+.contenedor-ultima-partida button{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #F7A500;
+    color: #000000;
+    border: transparent;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#estadisticas{
+    display: none;
+}

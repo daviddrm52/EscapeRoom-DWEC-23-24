@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sección de administración - Escape Room AC</title>
+    <title>Test de la JSTRC - Escape Room</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="shortcut icon" href="./img/logo/base_logo_mobile.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/common-css.css">
-    <link rel="stylesheet" href="./css/administracion.css">
+    <link rel="stylesheet" href="./css/escape-room-2.css">
+
 </head>
 <body>
     <header>
@@ -19,21 +20,22 @@
         </div>
     </header>
     <main>
-        <div class="usuarios-registrados">
-            <div>
-                <h3>Bienvenido <span id="administradorConectado"></span>!</h3>
-            </div>
-            <h1>Usuarios registrados en Escape Room AC</h1>
-            <table id="tabla-usuarios"></table>
+        <div class="habitacion-juego" id="informacion-juego">
+            <h4>Test de conocimientos de la aviación de Pais Chiquitín</h4>
+            <p>Bienvenido <span id="nombreJugador"></span>, esta es la ultima prueba antes de que puedas formar parte de la división de aviación de la Junta de Seguridad del Transporte de la Republica de Chiquitin (JSTRC).</p>
+            <p><i>La división de aviación de la JSTRC es uno de los trabajos mejor pagados, su funcion es, si ocurre un incidente con un avión en el pais, o un avión fabricado en Pais Chiquitín, son los responsables en descubrir que ha ocurrido exactamente.</i></p>
+            <p>Tu compañera Akane lo ha superado con un 100% de aciertos, espero que tu tambien puedas hacerlo bien. <i>De las mejores que van a entrar.</i></p>
+            <p>Te recuerdo que el test tiene 30 preguntas, y si llegas a más de 5 fallos, es un suspenso automatico.</p>
+            <p>La tematica del test es "Aviones fabricados en Pais Chiquitin, y las aerolineas que operan en el".</p>
+            <button id="iniciarExamen">Iniciar test</button>
         </div>
-        <div class="informacion-extra">
-            <h2><b>¿Has encontrado lo que buscabas?</b></h2>
-            <div class="menu-informacion-extra">
-                <p>Esperando...</p>
-            </div>
-        </div>
-        <div class="informacion-extra">
-            <p><b>Imagen de fondo:</b> Chiquitín E-60 de la ROChAF en pleno vuelo (S-28-02)</p>
+        <div id="examenJSTRC">
+            <div id="preguntaPropuestaExamen"></div>
+            <img src="" width="300px" id="imagenPregunta">
+            <button class="botonRespuesta" id="boton1"></button>
+            <button class="botonRespuesta" id="boton2"></button>
+            <button class="botonRespuesta" id="boton3"></button>
+            <button class="botonRespuesta" id="boton4"></button>
         </div>
     </main>
     <footer>
@@ -54,7 +56,7 @@
             </div>
         </div>
     </footer>
-    <script src="./js/administracion.js"></script>
+    <script src="./js/escape-room-2.js"></script>
     <script src="./js/usuario-conectado.js"></script>
 </body>
 </html>

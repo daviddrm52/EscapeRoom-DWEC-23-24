@@ -185,7 +185,7 @@ function verificarUsuario(){
             //Verificar si el nuevo usuario es administrador
             if(informacionUsuario.administrador){
                 //Redirigido a la pagina de administración
-                window.location.replace("./index_admin.html");
+                window.location.replace("./administracion.html");
             } else {
                 //Redirigido al inicio normal(si es un usuario normal)
                 window.location.replace("./index.html");

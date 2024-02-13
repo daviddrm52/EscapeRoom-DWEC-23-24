@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del ahorcado - Escape Room</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="shortcut icon" href="./img/logo/base_logo_mobile.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/common-css.css">
+    <link rel="stylesheet" href="./css/juego-1-ahorcado.css">
+</head>
+<body>
+    <header>
+        <div class="header-link">
+            <h1><a href="./index.html"><img src="./img/logo/base_logo_mobile.png" alt="web_logo" height="25px"> Escape Room AC</a></h1>
+        </div>
+        <div class="header-buttons">
+            <a id="linkInicioSesion" href="./sign-in.html"><button><span id="iconoBotonInicioSesion" class="material-symbols-outlined">login</span><span id="botonInicioSesion"></span></button></a>
+        </div>
+    </header>
+    <main>
+        <div class="contenedor-titulo">
+            <h2>
+                Juego del ahorcado
+            </h2>
+        </div>
+        <div id="contenedor-derrota">
+            <!-- <iframe width="300" src="https://www.youtube.com/embed/zd7c5tQCs1I?si=CO_W54d3a3dq4Nkl&amp;start=22" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            <div> -->
+                <h2 class="derrota">¡Has perdido!</h2>
+                <img src="./img/ahorcado/bonfire_lit.gif" alt="Man burning with fuel">
+                <p>Mala suerte, la palabra correcta era:</p>
+                <b><p id="solucion"></p></b>
+            </div>
+        </div>
+        <div id="contenedor-victoria">
+            <h2 class="victoria">Has ganado!</h2>
+            <img src="./img/ahorcado/draven_chad.png" width="200px">
+            <p>¡Bien hecho!</p>
+            <p>Has encontrado la palabra <span id="solucion_victoria"></span></p>
+        </div>
+        <div class="contenedor" id="contenedor">
+            <p class="texto">Seleccione una letra, le quedan <span id="intentos">7</span> intentos.</p>
+            <div class="palabraSecreta" id="palabraSecreta">_ _ _ _ _ _</div>       
+            <div class="fila">
+                <div class="letra">A</div>
+                <div class="letra">B</div>
+                <div class="letra">C</div>
+                <div class="letra">D</div>
+                <div class="letra">E</div>
+                <div class="letra">F</div>
+                <div class="letra">G</div>
+                <div class="letra">H</div>
+                <div class="letra">I</div>
+            </div>
+            <div class="fila">
+                <div class="letra">J</div>
+                <div class="letra">K</div>
+                <div class="letra">L</div>
+                <div class="letra">M</div>
+                <div class="letra">N</div>
+                <div class="letra">Ñ</div>
+                <div class="letra">O</div>
+                <div class="letra">P</div>
+                <div class="letra">Q</div>
+            </div>
+            <div class="fila">
+                <div class="letra">R</div>
+                <div class="letra">S</div>
+                <div class="letra">T</div>
+                <div class="letra">U</div>
+                <div class="letra">V</div>
+                <div class="letra">W</div>
+                <div class="letra">X</div>
+                <div class="letra">Y</div>
+                <div class="letra">Z</div>
+            </div>
+            <div class="fila">
+                <div class="letra especial"> </div>
+            </div>
+            <p class="texto">Ha cometido <span id="erroresCometidos">0</span> errores.</p>
+            <p id="restadorIntentos"></p>
+        </div>
+        <div class="contenedor-inicio" id="contenedor-inicio">
+            <button id="botonIniciarPartida">Iniciar partida</button>
+        </div>
+        <div class="contenedor-tiempo" id="contenedor-tiempo">
+            <p>Tiempo transcurrido: </p>
+            <div id="tiempoTranscurrido">00:00:00</div>
+        </div>
+        <div class="contenedor-muestra">
+            <div>
+                <h3>Palabras disponibles</h3>
+                <ul id="ul-palabras"></ul>
+                <p><b>Total de palabras: <span id="total-palabras">0</span></b></p>
+                <button id="volverInicio">Volver al inicio</button>
+            </div>
+        </div>
+        <div class="contenedor-reinicio" id="contenedor-reinicio">
+            <a href="./juego-1-ahorcado.html"><button id="botonReiniciarPartida">Reiniciar Partida</button></a>
+            <a href="./index.html"><button id="botonReiniciarPartida">Regresar al inicio</button></a>
+        </div>
+        <div class="contenedor-ayuda" id="contenedor-ayuda">
+            <div>
+                <h3>Ayuda para el usuario.</h3>
+            </div>
+            <div>
+                <p><b>¿Que tematica tiene este ahorcado?</b></p>
+                <p>Aerolineas de Pais Chiquitin, si quieres saber cuales son, abajo hay una lista.</p>
+            </div>
+            <div>
+                <p><b>¿Como se juega?</b></p>
+                <p>Tienes que seleccionar la letra que creas que esta incluida en la palabra oculta.</p>
+                <p> - Si fallas, se pondrá en <span class="error-ayuda">rojo</span> y se restara un intento.</p>
+                <p> - Si aciertas, se pondrá en <span class="correcto-ayuda">verde</span> y podras seguir.</p>
+            </div>
+            <div>
+                <p><b>¿Gano algo si lo completo?</b></p>
+                <p>La autosatisfacción de que lo has hecho.</p>
+            </div>
+            <div>
+                <p><b>¿Hay otras tematicas?</b></p>
+                <p>Por el momento, no.</p>
+            </div>
+            <div>
+                <p><b>¿Puedo ver como fue la anterior partida?</b></p>
+                <p>Si, hay un boton para poder ver las estadisticas de la anterior partida.</p>
+            </div>
+        </div>
+        <div class="contenedor-palabras">
+            <p>¿Que palabras hay en el ahorcado?</p>
+            <button id="verPalabras">Ver palabras</button>
+        </div>
+        <div class="contenedor-ultima-partida">
+            <p><b>Estadisticas de la ultima partida:</b></p>
+            <button id="mostrarEstadisticas">Ver ultima partida</button>
+            <div id="estadisticas">
+                <p><b>Nombre del ultimo jugador: </b><span id="nombreJugadorEstadistica"></span></p>
+                <p><b>Resultado de la partida: </b><span id="resultadoPartidaEstadistica"></span></p>
+                <p><b>Palabra secreta: </b><span id="palabraSecretaEstadistica"></span></p>
+                <p><b>Errores cometidos: </b><span id="erroresCometidosEstadistica"></span></p>
+                <p><b>Tiempo empleado: </b><span id="tiempoEmpleadoEstadistica"></span></p>
+            </div>    
+        </div>
+    </main>
+    <footer>
+        <div>
+            <div class="links-footer">
+                <h4>Información, de un vistazo</h4>
+                <ul>
+                    <li><a id="linkInicioSesionFooter" href="./sign-in.html">Iniciar sesión</a></li>
+                    <li><a href="./about.html">Sobre nosotros</a></li>
+                    <li><a href="./info-escape-rooms.html">Escape rooms disponibles</a></li>
+                    <li><a href="./administracion.html">Sección de administración</a></li>
+                </ul>
+            </div>
+            <div class="info-footer">
+                <p> <a href=""><img src="./img/logo/base_logo_mobile.png" alt="" width="45px"></a> </p>
+                <p> Escape Room AC forma parte de AviaTalk.com </p>
+                <p> © 2024 <a href="https://daviddrm52.github.io/diw-23-24/UD5/Activity_1_part_2/index.html">AviaTalk.com</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/ahorcado.js"></script>
+    <script src="./js/usuario-conectado.js"></script>
+</body>
+</html>
