@@ -11,9 +11,59 @@ body {
     padding: 20px;
     margin: 0 auto;
     width: 700px;
-    height: 700px;
     border-radius: 5px;
     margin-top: 20px;
     margin-bottom: 20px;
     color: #FFFFFF;
+    margin-top: 75px;
+    margin-bottom: 75px;
+}
+
+.habitacion-juego button#iniciarExamen{
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border: transparent;
+    background-color: #F77700;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#resultadoExamen, #mensajeSuspenso {
+    display: none;
+}
+
+#examenJSTRC{
+    text-align: center;
+    display: none;
+}
+
+#preguntaPropuestaExamen{
+    font-size: large;
+    padding: 10px;
+}
+
+#imagenPregunta {
+    width: 300px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.botones-respuestas{
+    padding: 20px;
+}
+
+.botonRespuesta {
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    width: 400px;
+    border: transparent;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    cursor: pointer;
 }

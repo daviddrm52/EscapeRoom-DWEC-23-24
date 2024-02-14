@@ -28,14 +28,27 @@
             <p>Te recuerdo que el test tiene 30 preguntas, y si llegas a más de 5 fallos, es un suspenso automatico.</p>
             <p>La tematica del test es "Aviones fabricados en Pais Chiquitin, y las aerolineas que operan en el".</p>
             <button id="iniciarExamen">Iniciar test</button>
+            <p>Dificultad del examen: Elevado</p>
         </div>
-        <div id="examenJSTRC">
+        <div class="habitacion-juego" id="examenJSTRC">
+            <div id="numeroPregunta"></div>
             <div id="preguntaPropuestaExamen"></div>
-            <img src="" width="300px" id="imagenPregunta">
-            <button class="botonRespuesta" id="boton1"></button>
-            <button class="botonRespuesta" id="boton2"></button>
-            <button class="botonRespuesta" id="boton3"></button>
-            <button class="botonRespuesta" id="boton4"></button>
+            <img src="" id="imagenPregunta">
+            <div class="botones-respuestas">
+                <button class="botonRespuesta" id="boton1"></button>
+                <button class="botonRespuesta" id="boton2"></button>
+                <button class="botonRespuesta" id="boton3"></button>
+                <button class="botonRespuesta" id="boton4"></button>
+            </div>
+            <p>Tiempo transcurrido: </p>
+            <div id="tiempoExamen"></div>
+        </div>
+        <div class="habitacion-juego" id="resultadoExamen">
+            <div id="mensajeSuspenso">
+                <h2>Has suspendido el examen</h2>
+            </div>
+            <div id="mensajeExcelente"></div>
+            <div id="mensajeAprobado"></div>
         </div>
     </main>
     <footer>
