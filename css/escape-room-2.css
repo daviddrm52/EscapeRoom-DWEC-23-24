@@ -31,7 +31,7 @@ body {
     cursor: pointer;
 }
 
-#resultadoExamen, #mensajeSuspenso {
+#resultadoExamen, #mensajeSuspenso, #mensajeExcelente, #mensajeAprobado {
     display: none;
 }
 
