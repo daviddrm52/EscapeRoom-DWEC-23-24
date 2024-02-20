@@ -20,15 +20,37 @@
         </div>
     </header>
     <main>
+        <div class="habitacion-juego" id="exteriorJuego">
+            <h3>El "examen" para entrar en la JSTRC</h3>
+            <p>24 de octubre de 2023 - 09:35 (UTC+09:00)</p>
+            <p><i>Aún me acuerdo de ese accidente en el Valle Nevado en los años 80, no era más que un crio cuando eso pasó, pero vi algo que me gustó, la investigación para encontrar la causa de ese accidente.</i></p>
+            <p>Has estado trabajando en el sector de la aviación desde que eras joven, con 20 años comenzaste a trabajar en el SNTA (Servicio Nacional de Trafico Aereo) unos 4 años, pero ese trabajo es demasiado estresante.</p>
+            <p>Con 24 años. ahora quieres entrar en la JSTRC, ya que buscan gente nueva, ademas ya tienes experiencia en el sector de la aviación en Pais Chiquitín.</p>
+            <p><i>Una amiga mia me habia recomendado apuntarme, y ahora estamos en plena fase de selección, en fin, gracias Akane por avisarme de que habian plazas...</i></p>
+            <p>Ahora estas en las oficinas de la división de aviación de la JSTRC, al lado del Aeropuerto del Valle Soleado (VSA).</p>
+            <p>La división de aviación de la JSTRC es uno de los trabajos mejor pagados, su funcion es, si ocurre un incidente con un avión en el pais, o un avión fabricado en Pais Chiquitín, son los responsables en descubrir que ha ocurrido exactamente.</p>
+            <button id="entrarEdificio">Entrar en el edificio</button>
+        </div>
+        <div class="habitacion-juego" id="interiorEdificio">
+            <p>Has entrado dentro, ves un pasillo con un cartel que dice: "Pruebas iniciales de acceso a la JSTRC"</p>
+            <p>Vas por ese pasillo, ves a bastante gente, y ves una puerta con otro cartel...</p>
+            <p>Vas caminando y te encuentras con tu amiga Akane.</p>
+            <p><i>¡Hey <span id="nombreJugador"></span>, he conseguido aprobar la prueba, la directora ha dicho que soy de las mejores!</i></p>
+            <p><i>¡Buena suerte!</i> - Te dice Akane mientras se va del pasillo.</p>
+            <p>Ves un cartel que dice: Test de conocimientos de la aviación de Pais Chiquitín</p>
+            <p><i>En fin, voy a entrar, a ver que ocurre...</i></p>
+            <button id="entrarExamen">Entrar en la habitación con el cartel</button>
+        </div>
         <div class="habitacion-juego" id="informacion-juego">
-            <h4>Test de conocimientos de la aviación de Pais Chiquitín</h4>
-            <p>Bienvenido <span id="nombreJugador"></span>, esta es la ultima prueba antes de que puedas formar parte de la división de aviación de la Junta de Seguridad del Transporte de la Republica de Chiquitin (JSTRC).</p>
-            <p><i>La división de aviación de la JSTRC es uno de los trabajos mejor pagados, su funcion es, si ocurre un incidente con un avión en el pais, o un avión fabricado en Pais Chiquitín, son los responsables en descubrir que ha ocurrido exactamente.</i></p>
-            <p>Tu compañera Akane lo ha superado con un 100% de aciertos, espero que tu tambien puedas hacerlo bien. <i>De las mejores que van a entrar.</i></p>
-            <p>Te recuerdo que el test tiene 30 preguntas, y si llegas a más de 5 fallos, es un suspenso automatico.</p>
-            <p>La tematica del test es "Aviones fabricados en Pais Chiquitin, y las aerolineas que operan en el".</p>
-            <button id="iniciarExamen">Iniciar test</button>
-            <p>Dificultad del examen: Medio</p>
+            <p>Te encuentras a Ruby Akami, la directora de la división de aviacion de la JSTRC, una persona con mucho renombre.</p>
+            <p><i>Bienvenido <span id="nombreJugador"></span>, esta es una prueba antes de que podamos pensar que puedas formar parte de la división de aviación de la Junta de Seguridad del Transporte de la Republica de Chiquitin (JSTRC).</i></p>
+            <p><i>Tu compañera Akane nos ha hablado de ti, ella lo ha superado con un 100% de aciertos, espero que tu tambien puedas hacerlo bien.</i></p>
+            <p><i>Te recuerdo que el test tiene 30 preguntas, y si llegas a más de 5 fallos, es un suspenso automatico.</i></p>
+            <p><i>La tematica del test es "Aviones fabricados en Pais Chiquitin, y las aerolineas que operan en el". Es algo sencillo, pero dificil para la gente que no venga preparada.</i></p>
+            <p><i>No hay limite de tiempo, pero cada pregunta vale 100 puntos, cada fallo restará 50, si no consigues mucha puntuación, tampoco entras</i></p>
+            <p><i>Ah, antes de que se me olvide, no sabrás cual es la correcta o incorrecta, eso le añade un poco de dificultad a esto...</i></p>
+            <button id="iniciarExamen">Iniciar examen</button>
+            <p>Dificultad del examen: Medio-dificil <i class="textoSecreto">Dificultad para David: Facil</i></p>
         </div>
         <div class="habitacion-juego" id="examenJSTRC">
             <div id="numeroPregunta"></div>
@@ -59,6 +81,13 @@
                 <h2>Has aprobado el examen pero con algunos fallos, bien hecho</h2>
                 <p>Lo has hecho bien, pero con algunos fallos, Akane te ha superado, debes de mejorar un poco</p>
                 <h3 id="resultadoExamenAprobado"></h3>
+            </div>
+        </div>
+        <div class="habitacion-juego" id="clasificaciones">
+            <h2>Revisar resultados de otras personas</h2>
+            <button id="mostrarClasificacion">Mirar tabla de clasificación</button>
+            <div id="tablaClasificacion">
+                <table id="tabla-jugadores"></table>
             </div>
         </div>
     </main>

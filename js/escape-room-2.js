@@ -299,6 +299,9 @@ const imagenPregunta = document.getElementById("imagenPregunta")
 const mensajeSuspenso = document.getElementById("mensajeSuspenso");
 const mensajeAprobado = document.getElementById("mensajeAprobado");
 const mensajeExcelente = document.getElementById("mensajeExcelente");
+let nombreJugador = sessionStorage.getItem('nombreUsuario');
+var nombrePartida = "examen-"+nombreJugador;
+document.getElementById("nombreJugador").innerHTML = nombreJugador;
 
 //Variables en relación del tiempo
 let cronometro;
@@ -368,7 +371,7 @@ function mostrandoPreguntaActual(){
             mostrandoResultados();
         } else {
             console.log("Examen aún en curso...");
-        }
+        };
     };
 };
 
@@ -391,6 +394,14 @@ function mostrandoResultados(){
         document.getElementById("examenJSTRC").style.display = "none";
         document.getElementById("resultadoExamen").style.display = "block";
     };
+    var resultado = {
+        "NombreJugador": nombreJugador,
+        "TiempoExamen": tiempoTotal,
+        "PreguntasAcertadas": respuestasCorrectas,
+        "PreguntasFalladas": respuestasIncorrectas,
+        "Puntuación": puntuacionExamen
+    };
+    localStorage.setItem(nombrePartida, JSON.stringify(resultado));
 }
 
 //Funcion que comprueba la respuesta
@@ -414,6 +425,15 @@ function compruebaRespuesta(respuestaSeleccionada){
     }
 };
 
+function anadirJugadoresTabla(array){
+    var tablaJugadores = document.getElementById("tabla-jugadores");
+    tablaJugadores.innerHTML = "<tr><th>Nombre del jugador</th><th>Duración examen</th><th>Nº aciertos</th><th>Nº fallos</th><th>Puntuación</th></tr>";
+
+    for (let i = 0; i < array.length; i++){
+        tablaJugadores.innerHTML = "<tr><td>array[i].NombreJugador</td><td>array[i].TiempoExamen</td><td>array[i].PreguntasAcertadas</td><td>array[i].PreguntasFalladas</td><td>array[i].puntuacion</td></tr>";
+    };
+};
+
 //Event Listeners
 boton1.addEventListener("click", () => compruebaRespuesta(boton1.textContent));
 boton2.addEventListener("click", () => compruebaRespuesta(boton2.textContent));
@@ -424,4 +444,25 @@ iniciarExamen.addEventListener("click", (event) => {
     cronometro = setInterval(cronometroExamen, 1000);
     document.getElementById("examenJSTRC").style.display = "block";
     document.getElementById("informacion-juego").style.display = "none";
-})
+});
+
+//Boton para entrar en el edificio
+document.getElementById("entrarEdificio").addEventListener("click", () => {
+    document.getElementById("exteriorJuego").style.display = "none";
+    document.getElementById("interiorEdificio").style.display = "block";
+});
+
+//Boton para entrar en la habitación
+document.getElementById("entrarExamen").addEventListener("click", () => {
+    document.getElementById("interiorEdificio").style.display = "none";
+    document.getElementById("informacion-juego").style.display = "block";
+});
+
+document.getElementById("mostrarClasificacion").addEventListener("click", () => {
+    var valores = [], llaves = Object.keys(localStorage), i = llaves.length;
+    while (i--){
+        valores.push(JSON.parse(localStorage.getItem(llaves[i])));
+    }
+    console.log(valores[0]);
+    anadirJugadoresTabla(valores);
+});
