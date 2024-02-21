@@ -19,7 +19,7 @@ body {
     margin-bottom: 75px;
 }
 
-.habitacion-juego button#iniciarExamen, .habitacion-juego button#entrarEdificio, .habitacion-juego button#entrarExamen{
+button#iniciarExamen, button#entrarEdificio, button#entrarExamen, button#mostrarClasificacion, button#volverInicio{
     display: block;
     margin-top: 10px;
     margin-left: auto;
@@ -31,7 +31,20 @@ body {
     cursor: pointer;
 }
 
-#resultadoExamen, #mensajeSuspenso, #mensajeExcelente, #mensajeAprobado, #informacion-juego, #interiorEdificio {
+button#cancelarExamen{
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border: transparent;
+    background-color: #B4001D;
+    color: #FFFFFF;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#resultadoExamen, #mensajeSuspenso, #mensajeExcelente, #mensajeAprobado, #informacion-juego, #interiorEdificio, #clasificaciones {
     display: none;
 }
 
@@ -74,4 +87,33 @@ body {
 
 .textoSecreto:hover{
     color: #FFFFFF;
+}
+
+#tablaClasificacion {
+    padding: 10px;
+    display: none;
+
+}
+
+table{
+    text-align: center;
+    border: 2px solid #FFFFFF;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+th{
+    padding: 5px;
+    border: 2px solid #B4001D;
+    height: 30px;
+}
+
+td {
+    padding: 5px;
+    border: 2px solid #FFFFFF;
+    height: 30px;
+}
+
+td:hover{
+    background-color: #F7A500;
 }

@@ -21,7 +21,7 @@
     </header>
     <main>
         <div class="habitacion-juego" id="exteriorJuego">
-            <h3>El "examen" para entrar en la JSTRC</h3>
+            <h3>La prueba para darte a conocer en la JSTRC</h3>
             <p>24 de octubre de 2023 - 09:35 (UTC+09:00)</p>
             <p><i>Aún me acuerdo de ese accidente en el Valle Nevado en los años 80, no era más que un crio cuando eso pasó, pero vi algo que me gustó, la investigación para encontrar la causa de ese accidente.</i></p>
             <p>Has estado trabajando en el sector de la aviación desde que eras joven, con 20 años comenzaste a trabajar en el SNTA (Servicio Nacional de Trafico Aereo) unos 4 años, pero ese trabajo es demasiado estresante.</p>
@@ -38,6 +38,8 @@
             <p><i>¡Hey <span id="nombreJugador"></span>, he conseguido aprobar la prueba, la directora ha dicho que soy de las mejores!</i></p>
             <p><i>¡Buena suerte!</i> - Te dice Akane mientras se va del pasillo.</p>
             <p>Ves un cartel que dice: Test de conocimientos de la aviación de Pais Chiquitín</p>
+            <p>Tambien te percatas de algo, hay gente que ha entrado y ha durado unos segundos.</p>
+            <p><i>Este examen es facil, supongo que más tarde pondran las cosas dificiles...</i> - Dice alguien de fondo.</p>
             <p><i>En fin, voy a entrar, a ver que ocurre...</i></p>
             <button id="entrarExamen">Entrar en la habitación con el cartel</button>
         </div>
@@ -50,7 +52,7 @@
             <p><i>No hay limite de tiempo, pero cada pregunta vale 100 puntos, cada fallo restará 50, si no consigues mucha puntuación, tampoco entras</i></p>
             <p><i>Ah, antes de que se me olvide, no sabrás cual es la correcta o incorrecta, eso le añade un poco de dificultad a esto...</i></p>
             <button id="iniciarExamen">Iniciar examen</button>
-            <p>Dificultad del examen: Medio-dificil <i class="textoSecreto">Dificultad para David: Facil</i></p>
+            <p>Dificultad del examen: Medio-dificil <i class="textoSecreto">Dificultad para David: Too easy</i></p>
         </div>
         <div class="habitacion-juego" id="examenJSTRC">
             <div id="numeroPregunta"></div>
@@ -64,6 +66,7 @@
             </div>
             <p>Tiempo transcurrido: </p>
             <div id="tiempoExamen"></div>
+            <button id="cancelarExamen">Rendirte e ire a casa</button>
         </div>
         <div class="habitacion-juego" id="resultadoExamen">
             <div id="mensajeSuspenso">
@@ -82,6 +85,15 @@
                 <p>Lo has hecho bien, pero con algunos fallos, Akane te ha superado, debes de mejorar un poco</p>
                 <h3 id="resultadoExamenAprobado"></h3>
             </div>
+            <div id="mensajeAbandono">
+                <p>Has decidido huir y no continuar con el examen</p>
+                <p><i>¿¡Pero que!? Porque te vas corriendo</i> - Dice Ruby Akami en voz alta mientras te vas corriendo del edificio...</p>
+                <p><i>Supongo que el mundo de la aviación no es lo mio...</i></p>
+                <p><i>Uy, Akane se va a enfadar conmigo...</i></p>
+                <p><i>En fin, creo que me ire a buscar otro trabajo...</i></p>
+                <h3 id="resultadoExamenAbandonado"></h3>
+            </div>
+            <a href="./index.html"><button id="volverInicio">Volver al inicio</button></a>
         </div>
         <div class="habitacion-juego" id="clasificaciones">
             <h2>Revisar resultados de otras personas</h2>

@@ -287,6 +287,7 @@ let respuestasIncorrectas = 0;
 let tiempoTotal = 0;
 let examenFinalizado = false;
 let puntuacionExamen = 0;
+let examenCancelado = false;
 
 //Variables para poder poner las cosas en el html y eso
 let numeroPregunta = document.getElementById("numeroPregunta");
@@ -299,6 +300,7 @@ const imagenPregunta = document.getElementById("imagenPregunta")
 const mensajeSuspenso = document.getElementById("mensajeSuspenso");
 const mensajeAprobado = document.getElementById("mensajeAprobado");
 const mensajeExcelente = document.getElementById("mensajeExcelente");
+const mensajeAbandono = document.getElementById("mensajeAbandono");
 let nombreJugador = sessionStorage.getItem('nombreUsuario');
 var nombrePartida = "examen-"+nombreJugador;
 document.getElementById("nombreJugador").innerHTML = nombreJugador;
@@ -377,29 +379,43 @@ function mostrandoPreguntaActual(){
 
 function mostrandoResultados(){
     console.log("Examen finalizado, mostrando resultados...");
+    var estadoExamen;
     clearInterval(cronometro);
-    if(respuestasCorrectas === preguntasExamenJSTRC.length){
-        mensajeExcelente.style.display = "block"
-        document.getElementById("resultadoExamenExcelente").textContent = `Preguntas correctas: ${respuestasCorrectas}. Preguntas fallidas; ${respuestasIncorrectas}. Tiempo: ${tiempoTotal}. Puntuación: ${puntuacionExamen}`;
+    if(examenCancelado){
+        mensajeAbandono.style.display = "block";
+        document.getElementById("resultadoExamenAbandonado").textContent = `Preguntas correctas: ${respuestasCorrectas}. Preguntas fallidas; ${respuestasIncorrectas}. Tiempo: ${tiempoTotal}. Puntuación: ${puntuacionExamen}`;
         document.getElementById("examenJSTRC").style.display = "none";
         document.getElementById("resultadoExamen").style.display = "block";
-    } else if (respuestasIncorrectas > 5){
-        mensajeSuspenso.style.display = "block";
-        document.getElementById("resultadoExamenSuspenso").textContent = `Preguntas correctas: ${respuestasCorrectas}. Preguntas fallidas; ${respuestasIncorrectas}. Tiempo: ${tiempoTotal}. Puntuación: ${puntuacionExamen}`;
-        document.getElementById("examenJSTRC").style.display = "none";
-        document.getElementById("resultadoExamen").style.display = "block";
+        estadoExamen = "No finalizado";
     } else {
-        mensajeAprobado.style.display = "block"
-        document.getElementById("resultadoExamenAprobado").textContent = `Has aprobado, bien hecho. Preguntas correctas: ${respuestasCorrectas}. Preguntas fallidas; ${respuestasIncorrectas}. Tiempo: ${tiempoTotal}. Puntuación: ${puntuacionExamen}`;
-        document.getElementById("examenJSTRC").style.display = "none";
-        document.getElementById("resultadoExamen").style.display = "block";
+        if(respuestasCorrectas === preguntasExamenJSTRC.length){
+            mensajeExcelente.style.display = "block"
+            document.getElementById("resultadoExamenExcelente").textContent = `Preguntas correctas: ${respuestasCorrectas}. Preguntas fallidas; ${respuestasIncorrectas}. Tiempo: ${tiempoTotal}. Puntuación: ${puntuacionExamen}`;
+            document.getElementById("examenJSTRC").style.display = "none";
+            document.getElementById("resultadoExamen").style.display = "block";
+            estadoExamen = "Excelente";
+        } else if (respuestasIncorrectas > 5){
+            mensajeSuspenso.style.display = "block";
+            document.getElementById("resultadoExamenSuspenso").textContent = `Preguntas correctas: ${respuestasCorrectas}. Preguntas fallidas; ${respuestasIncorrectas}. Tiempo: ${tiempoTotal}. Puntuación: ${puntuacionExamen}`;
+            document.getElementById("examenJSTRC").style.display = "none";
+            document.getElementById("resultadoExamen").style.display = "block";
+            estadoExamen = "Suspenso";
+        } else {
+            mensajeAprobado.style.display = "block"
+            document.getElementById("resultadoExamenAprobado").textContent = `Has aprobado, bien hecho. Preguntas correctas: ${respuestasCorrectas}. Preguntas fallidas; ${respuestasIncorrectas}. Tiempo: ${tiempoTotal}. Puntuación: ${puntuacionExamen}`;
+            document.getElementById("examenJSTRC").style.display = "none";
+            document.getElementById("resultadoExamen").style.display = "block";
+            estadoExamen = "Aprobado";
+        };
     };
+    document.getElementById("clasificaciones").style.display = "block";
     var resultado = {
         "NombreJugador": nombreJugador,
+        "EstadoExamen": estadoExamen,
         "TiempoExamen": tiempoTotal,
         "PreguntasAcertadas": respuestasCorrectas,
         "PreguntasFalladas": respuestasIncorrectas,
-        "Puntuación": puntuacionExamen
+        "Puntuacion": puntuacionExamen
     };
     localStorage.setItem(nombrePartida, JSON.stringify(resultado));
 }
@@ -425,12 +441,11 @@ function compruebaRespuesta(respuestaSeleccionada){
     }
 };
 
-function anadirJugadoresTabla(array){
+function anadirJugadoresTabla(jugadores){
     var tablaJugadores = document.getElementById("tabla-jugadores");
-    tablaJugadores.innerHTML = "<tr><th>Nombre del jugador</th><th>Duración examen</th><th>Nº aciertos</th><th>Nº fallos</th><th>Puntuación</th></tr>";
-
-    for (let i = 0; i < array.length; i++){
-        tablaJugadores.innerHTML = "<tr><td>array[i].NombreJugador</td><td>array[i].TiempoExamen</td><td>array[i].PreguntasAcertadas</td><td>array[i].PreguntasFalladas</td><td>array[i].puntuacion</td></tr>";
+    tablaJugadores.innerHTML = "<tr><th>Nombre del jugador</th><th>Estado examen</th><th>Duración examen</th><th>Nº aciertos</th><th>Nº fallos</th><th>Puntuación</th></tr>";
+    for (let i = 0; i < jugadores.length; i++){
+        tablaJugadores.innerHTML += "<tr><td>"+jugadores[i].NombreJugador+"</td><td>"+jugadores[i].EstadoExamen+"</td><td>"+jugadores[i].TiempoExamen+"</td><td>"+jugadores[i].PreguntasAcertadas+"</td><td>"+jugadores[i].PreguntasFalladas+"</td><td>"+jugadores[i].Puntuacion+"</td></tr>";
     };
 };
 
@@ -458,11 +473,19 @@ document.getElementById("entrarExamen").addEventListener("click", () => {
     document.getElementById("informacion-juego").style.display = "block";
 });
 
+//Boton para cancelar e irte a casa
+document.getElementById("cancelarExamen").addEventListener("click", () => {
+    examenCancelado = true;
+    puntuacionExamen = 0;
+    mostrandoResultados();
+})
+
 document.getElementById("mostrarClasificacion").addEventListener("click", () => {
+    document.getElementById("tablaClasificacion").style.display = "block"
     var valores = [], llaves = Object.keys(localStorage), i = llaves.length;
     while (i--){
         valores.push(JSON.parse(localStorage.getItem(llaves[i])));
     }
-    console.log(valores[0]);
+    console.log(valores);
     anadirJugadoresTabla(valores);
 });
