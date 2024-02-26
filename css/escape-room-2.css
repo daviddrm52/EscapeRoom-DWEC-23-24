@@ -44,7 +44,7 @@ button#cancelarExamen{
     cursor: pointer;
 }
 
-#resultadoExamen, #mensajeSuspenso, #mensajeExcelente, #mensajeAprobado, #informacion-juego, #interiorEdificio, #clasificaciones {
+#resultadoExamen, #mensajeSuspenso, #mensajeExcelente, #mensajeAprobado, #mensajeAbandono, #informacion-juego, #interiorEdificio, #clasificaciones {
     display: none;
 }
 

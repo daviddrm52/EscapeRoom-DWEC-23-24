@@ -1,7 +1,7 @@
 /* CSS especifico para la pagina about.html */
 
 body {
-    background-image: url(./../img/background/CHN576AC_C101_AC.png);
+    background-image: url(./../img/info-escape-rooms/test_jstrc.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -13,7 +13,7 @@ body {
     background-color: rgba(239, 239, 239, 0.70);
     padding: 20px;
     margin: 0 auto;
-    width: 700px;
+    width: 600px;
     border-radius: 5px;
     margin-top: 20px;
     margin-bottom: 20px;
