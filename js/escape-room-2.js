@@ -7,11 +7,12 @@ if (usuarioIniciado == null){
 }
 //JSON donde estan todas las preguntas del examen (version nacional)
 import preguntasNacionales from "./../misc/nationalExamJSTRC.json" assert {type: 'json'};
-const preguntasExamenJSTRC = preguntasNacionales;
-//JSON donde estan todas las preguntas del examen (version nacional)
+//JSON donde estan todas las preguntas del examen (version internacional)
 import preguntasInternacionales from "./../misc/internationalExamJSTRC.json" assert {type: 'json'};
-const preguntasExamenJSTRCInternacional = preguntasInternacionales;
 
+//La primera ronda será el examen nacional
+// let preguntasExamenJSTRC = preguntasNacionales;
+let preguntasExamenJSTRC = preguntasInternacionales;
 
 //Variables que cuentan cuantas preguntas llevamos bien y mal, ademas de en cual estamos
 let indicePreguntaActual = 0;
@@ -121,7 +122,7 @@ function mostrandoResultados(){
         document.getElementById("resultadoExamen").style.display = "block";
         estadoExamen = "No finalizado";
     } else {
-        if(respuestasCorrectas === preguntasExamenJSTRC.length){
+        if(respuestasCorrectas > 1/*=== preguntasExamenJSTRC.length*/){
             mensajeExcelente.style.display = "block"
             document.getElementById("resultadoExamenExcelente").textContent = `Preguntas correctas: ${respuestasCorrectas}. Preguntas fallidas; ${respuestasIncorrectas}. Tiempo: ${tiempoTotal}. Puntuación: ${puntuacionExamen}`;
             document.getElementById("examenJSTRC").style.display = "none";
@@ -148,7 +149,8 @@ function mostrandoResultados(){
         "TiempoExamen": tiempoTotal,
         "PreguntasAcertadas": respuestasCorrectas,
         "PreguntasFalladas": respuestasIncorrectas,
-        "Puntuacion": puntuacionExamen
+        "Puntuacion": puntuacionExamen,
+        "TipoExamen": "nacional"
     };
     localStorage.setItem(nombrePartida, JSON.stringify(resultado));
 }
@@ -221,4 +223,21 @@ document.getElementById("mostrarClasificacion").addEventListener("click", () => 
     }
     console.log(valores);
     anadirJugadoresTabla(valores);
+});
+
+// Variante internacional del examen
+document.getElementById("iniciarExamenInternacional").addEventListener("click", () => {
+    preguntasExamenJSTRC = preguntasInternacionales;
+    indicePreguntaActual = 0;
+    respuestasCorrectas = 0;
+    respuestasIncorrectas = 0;
+    tiempoTotal = 0;
+    examenFinalizado = false;
+    puntuacionExamen = 0;
+    examenCancelado = false;
+    tiempoExamen.innerHTML  = "00:00:00";
+    cronometro = setInterval(cronometroExamen, 1000);
+    document.getElementById("examenJSTRC").style.display = "block";
+    document.getElementById("informacion-juego").style.display = "none";
+    mostrandoPreguntaActual();
 });
