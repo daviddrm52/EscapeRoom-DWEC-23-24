@@ -19,7 +19,7 @@ body {
     margin-bottom: 75px;
 }
 
-button#iniciarExamen, button#entrarEdificio, button#entrarExamen, button#mostrarClasificacion, button#volverInicio{
+button#iniciarExamenNacional, button#iniciarExamenInternacional, button#entrarEdificio, button#entrarExamen, button#mostrarClasificacion, button#volverInicio{
     display: block;
     margin-top: 10px;
     margin-left: auto;
@@ -44,8 +44,21 @@ button#cancelarExamen{
     cursor: pointer;
 }
 
-#resultadoExamen, #mensajeSuspenso, #mensajeExcelente, #mensajeAprobado, #mensajeAbandono, #informacion-juego, #interiorEdificio, #clasificaciones {
+#resultadoExamenNacional, #mensajeSuspensoNacional, #mensajeExcelenteNacional, #mensajeAprobadoNacional, #mensajeAbandonoNacional {
     display: none;
+}
+
+#resultadoExamenInternacional, #mensajeSuspensoNacional, #mensajeExcelenteNacional, #mensajeAprobadoNacional, #mensajeAbandonoNacional {
+    display: none;
+}
+
+#informacion-juego, #interiorEdificio, #clasificaciones {
+    display: none;
+}
+
+a{
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 #examenJSTRC{

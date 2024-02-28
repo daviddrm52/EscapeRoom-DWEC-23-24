@@ -81,43 +81,43 @@
     },
     {
         "pregunta": "¿Que avión es este?",
-        "imagen": "./img/test_jstrc/pregunta_11.png",
-        "respuestaCorrecta": "Chiquitín C600-800",
-        "respuestaIncorrecta1": "Boeing 787-8 Dreamliner",
-        "respuestaIncorrecta2": "Airbus A330-800neo",
-        "respuestaIncorrecta3": "CHJ 900-100"
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/6/64/N845MH_%2826210714856%29.jpg",
+        "respuestaCorrecta": "Boeing 767-400ER",
+        "respuestaIncorrecta1": "Boeing 767-300ER",
+        "respuestaIncorrecta2": "Boeing 777-200ER",
+        "respuestaIncorrecta3": "Airbus A330-300"
     },
     {
-        "pregunta": "¿Que avión es 'ZA002' de la ROChAF?",
-        "imagen": "./img/test_jstrc/pregunta_12.png",
-        "respuestaCorrecta": "Boeing 757-2ZA",
-        "respuestaIncorrecta1": "Chiquitin C500-106",
-        "respuestaIncorrecta2": "Airbus A310-308",
-        "respuestaIncorrecta3": "Chiquitin C300-202"
+        "pregunta": "¿Que aerolinea ya no esta en la alianza OneWorld?",
+        "imagen": "https://cdn.jetphotos.com/full/6/1621958_1708035711.jpg",
+        "respuestaCorrecta": "S7 Airlines",
+        "respuestaIncorrecta1": "Japan Airlines",
+        "respuestaIncorrecta2": "British Airways",
+        "respuestaIncorrecta3": "Iberia"
     },
     {
-        "pregunta": "¿Que motores hay en funcionamiento en los B772 de Air Chiquin?",
-        "imagen": "./img/test_jstrc/pregunta_13.png",
-        "respuestaCorrecta": "Pratt & Withney PW4077",
-        "respuestaIncorrecta1": "General Electric GE90-76B",
-        "respuestaIncorrecta2": "Rolls Royce Trent 895",
-        "respuestaIncorrecta3": "Air Chiquin no opera el B772"
+        "pregunta": "¿Cual fue el ultimo avión de Airbus con el 'yoke'?",
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Iberia_Airbus_A300_Bidini.jpg",
+        "respuestaCorrecta": "Airbus A300-600R",
+        "respuestaIncorrecta1": "Airbus A310-300",
+        "respuestaIncorrecta2": "Airbus A300B4",
+        "respuestaIncorrecta3": "Airbus A310-200"
     },
     {
-        "pregunta": "¿Cual es el Boeing Customer Code de Chiquitin Airlines?",
-        "imagen": "./img/test_jstrc/pregunta_14.png",
-        "respuestaCorrecta": "79",
-        "respuestaIncorrecta1": "CH",
-        "respuestaIncorrecta2": "39",
-        "respuestaIncorrecta3": "A2"
+        "pregunta": "¿Que variante del Boeing 767 tiene un radar AWACS encima?",
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/E-767_Japan_AWACS_112010_view.jpg/1280px-E-767_Japan_AWACS_112010_view.jpg",
+        "respuestaCorrecta": "Boeing E-767",
+        "respuestaIncorrecta1": "Boeing KC-767",
+        "respuestaIncorrecta2": "Boeing KC-46 Pegasus",
+        "respuestaIncorrecta3": "Boeing E-10 MC2A"
     },
     {
-        "pregunta": "¿Cual es el vuelo internacional más largo que hay en servicio desde Pais Chiquitín?",
-        "imagen": "./img/test_jstrc/pregunta_15.png",
-        "respuestaCorrecta": "Ciudad Chiquin (ACN) a Santiago de Chile (SCL) con un Boeing 777-200LR de Air Chiquin",
-        "respuestaIncorrecta1": "Ciudad Chiquitin (CHN) a Nueva York (JFK) con un Boeing 777-300ER de Chiquitin Airlines",
-        "respuestaIncorrecta2": "Ciudad Chiquin (ACN) a Madrid (MAD) con un Airbus A340-600 de Air Chiquin",
-        "respuestaIncorrecta3": "Ciudad Chiquitín (CHN) a Toronto (YYZ) con un Boeing 747-8i de Chiquitin Airlines"
+        "pregunta": "¿Que avión vuela la actual ruta más larga del mundo (Singapur a Nueva York)?",
+        "imagen": "",
+        "respuestaCorrecta": "Airbus A350-900ULR",
+        "respuestaIncorrecta1": "Boeing 777-200LR",
+        "respuestaIncorrecta2": "Airbus A340-500IGW",
+        "respuestaIncorrecta3": "Boeing 747-8i"
     },
     {
         "pregunta": "¿Cual es el vuelo internacional más concurrido que hay en Pais Chiquitín?",

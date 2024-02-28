@@ -51,8 +51,8 @@
             <p><i>La tematica del test es "Aviones fabricados en Pais Chiquitin, y las aerolineas que operan en el". Es algo sencillo, pero dificil para la gente que no venga preparada.</i></p>
             <p><i>No hay limite de tiempo, pero cada pregunta vale 100 puntos, cada fallo restará 50, si no consigues mucha puntuación, tampoco entras</i></p>
             <p><i>Ah, antes de que se me olvide, no sabrás cual es la correcta o incorrecta, eso le añade un poco de dificultad a esto...</i></p>
-            <button id="iniciarExamen">Iniciar examen</button>
-            <p>Dificultad del examen: Medio-dificil <i class="textoSecreto">Dificultad para David: Too easy</i></p>
+            <button id="iniciarExamenNacional">Iniciar primer examen</button>
+            <p>Dificultad del primer examen: Medio-dificil <i class="textoSecreto">Dificultad para David: Too easy</i></p>
         </div>
         <div class="habitacion-juego" id="examenJSTRC">
             <div id="numeroPregunta"></div>
@@ -68,36 +68,40 @@
             <div id="tiempoExamen"></div>
             <button id="cancelarExamen">Rendirte e ire a casa</button>
         </div>
-        <div class="habitacion-juego" id="resultadoExamen">
-            <div id="mensajeSuspenso">
+        <div class="habitacion-juego" id="resultadoExamenNacional">
+            <div id="mensajeSuspensoNacional">
                 <h2>Has suspendido el examen</h2>
                 <p>En fin, esto nos demuestra que aún intenta entrar gente sin talento...</p>
                 <i>Esto no le va a gustar a tu compañera Akane...</i>
-                <h3 id="resultadoExamenSuspenso"></h3>
+                <h3 id="resultadoExamenNacionalSuspenso"></h3>
                 <p>Te puedes ir, no necesitamos a gente como tu</p>
+            <a href="./index.html"><button id="volverInicio">Volver al inicio</button></a>
             </div>
-            <div id="mensajeExcelente">
+            <div id="mensajeExcelenteNacional">
                 <h2>¡Has aprobado el examen sin fallos, enhorabuena!</h2>
                 <p>Sabia que podiamos confiar en ti, has sacado la misma puntuación que Akane, bienvenido a la JSTRC</p>
-                <h3 id="resultadoExamenExcelente"></h3>
+                <h3 id="resultadoExamenNacionalExcelente"></h3>
+                <p>Ya que te ha ido bien esta prueba, ahora pasarás a la variante internacional del examen, espero que estes preparado</p>
+                <!-- <button id="iniciarExamenInternacional">Inicar examen versión internacional</button> -->
+            </div>
+            <div id="mensajeAprobadoNacional">
+                <h2>Has aprobado el examen pero con algunos fallos, bien hecho</h2>
+                <p>Lo has hecho bien, pero con algunos fallos, Akane te ha superado, debes de mejorar un poco</p>
+                <h3 id="resultadoExamenNacionalAprobado"></h3>
                 <p>Ya que te ha ido bien esta prueba, ahora pasarás a la variante internacional del examen, espero que estes preparado</p>
                 <button id="iniciarExamenInternacional">Inicar examen versión internacional</button>
             </div>
-            <div id="mensajeAprobado">
-                <h2>Has aprobado el examen pero con algunos fallos, bien hecho</h2>
-                <p>Lo has hecho bien, pero con algunos fallos, Akane te ha superado, debes de mejorar un poco</p>
-                <h3 id="resultadoExamenAprobado"></h3>
-            </div>
-            <div id="mensajeAbandono">
+            <div id="mensajeAbandonoNacional">
                 <p>Has decidido huir y no continuar con el examen</p>
                 <p><i>¿¡Pero que!? Porque te vas corriendo</i> - Dice Ruby Akami en voz alta mientras te vas corriendo del edificio...</p>
                 <p><i>Supongo que el mundo de la aviación no es lo mio...</i></p>
                 <p><i>Uy, Akane se va a enfadar conmigo...</i></p>
                 <p><i>En fin, creo que me ire a buscar otro trabajo...</i></p>
-                <h3 id="resultadoExamenAbandonado"></h3>
+                <h3 id="resultadoExamenAbandonadoNacional"></h3>
+                <a href="./index.html"><button id="volverInicio">Volver al inicio</button></a>
             </div>
-            <a href="./index.html"><button id="volverInicio">Volver al inicio</button></a>
         </div>
+        <div class="habitacion-juego" id="resultadoExamenInternacional"></div>
         <div class="habitacion-juego" id="clasificaciones">
             <h2>Revisar resultados de otras personas</h2>
             <button id="mostrarClasificacion">Mirar tabla de clasificación</button>
