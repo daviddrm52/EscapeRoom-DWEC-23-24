@@ -38,12 +38,13 @@ const mensajeAprobadoNacional = document.getElementById("mensajeAprobadoNacional
 const mensajeExcelenteNacional = document.getElementById("mensajeExcelenteNacional");
 const mensajeAbandonoNacional = document.getElementById("mensajeAbandonoNacional");
 //Mensajes para el examen internacional
-// const mensajeSuspensoInternacional = document.getElementById("mensajeSuspenso");
-// const mensajeAprobadoInternacional = document.getElementById("mensajeAprobado");
-// const mensajeExcelenteInternacional = document.getElementById("mensajeExcelente");
-// const mensajeAbandonoInternacional = document.getElementById("mensajeAbandono");
+const mensajeSuspensoInternacional = document.getElementById("mensajeSuspenso");
+const mensajeAprobadoInternacional = document.getElementById("mensajeAprobado");
+const mensajeExcelenteInternacional = document.getElementById("mensajeExcelente");
+const mensajeAbandonoInternacional = document.getElementById("mensajeAbandono");
 const iniciarExamenNacional = document.getElementById("iniciarExamenNacional");
-const iniciarExamenInternacional = document.getElementById("iniciarExamenInternacional");
+const iniciarExamenInternacionalExcelente = document.getElementById("iniciarExamenInternacionalExcelente");
+const iniciarExamenInternacionalAprobado = document.getElementById("iniciarExamenInternacionalAprobado");
 const informacionJuego = document.getElementsByClassName("habitación-juego");
 let nombreJugador = sessionStorage.getItem('nombreUsuario');
 var nombrePartidaNacional = "examen-"+nombreJugador+"-nacional";
@@ -296,6 +297,23 @@ function mostrandoResultadosInternacional(){
     localStorage.setItem(nombrePartidaInternacional, JSON.stringify(resultado));
 }
 
+//Funcion para iniciar examen internacional
+function iniciarExamenInternacional() {
+    versionExamen = "internacional";
+    indicePreguntaActual = 0;
+    respuestasCorrectas = 0;
+    respuestasIncorrectas = 0;
+    tiempoTotal = 0;
+    examenFinalizado = false;
+    puntuacionExamen = 0;
+    examenCancelado = false;
+    tiempoExamen.innerHTML  = "00:00:00";
+    cronometro = setInterval(cronometroExamen, 1000);
+    document.getElementById("examenJSTRC").style.display = "block";
+    document.getElementById("informacion-juego").style.display = "none";
+    mostrandoPreguntaActualInternacional();
+};
+
 /* EVENT LISTENERS */
 
 //Boton para entrar en el edificio
@@ -343,18 +361,9 @@ boton3.addEventListener("click", () => compruebaRespuesta(boton3.textContent));
 boton4.addEventListener("click", () => compruebaRespuesta(boton4.textContent));
 
 //Para iniciar el examen internacional (el segundo)
-iniciarExamenInternacional.addEventListener("click", () => {
-    versionExamen = "internacional";
-    indicePreguntaActual = 0;
-    respuestasCorrectas = 0;
-    respuestasIncorrectas = 0;
-    tiempoTotal = 0;
-    examenFinalizado = false;
-    puntuacionExamen = 0;
-    examenCancelado = false;
-    tiempoExamen.innerHTML  = "00:00:00";
-    cronometro = setInterval(cronometroExamen, 1000);
-    document.getElementById("examenJSTRC").style.display = "block";
-    document.getElementById("informacion-juego").style.display = "none";
-    mostrandoPreguntaActualInternacional();
+iniciarExamenInternacionalAprobado.addEventListener("click", () => {
+    iniciarExamenInternacional();
+});
+iniciarExamenInternacionalExcelente.addEventListener("click", () => {
+    iniciarExamenInternacional();
 });

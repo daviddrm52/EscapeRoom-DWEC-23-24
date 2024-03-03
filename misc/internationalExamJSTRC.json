@@ -113,130 +113,130 @@
     },
     {
         "pregunta": "¿Que avión vuela la actual ruta más larga del mundo (Singapur a Nueva York)?",
-        "imagen": "",
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Singapore_Airlines_Airbus_A350_XWB_-9_9V-SGC_landing_SFO.jpg/1920px-Singapore_Airlines_Airbus_A350_XWB_-9_9V-SGC_landing_SFO.jpg",
         "respuestaCorrecta": "Airbus A350-900ULR",
         "respuestaIncorrecta1": "Boeing 777-200LR",
         "respuestaIncorrecta2": "Airbus A340-500IGW",
-        "respuestaIncorrecta3": "Boeing 747-8i"
+        "respuestaIncorrecta3": "Airbus A350-1000"
     },
     {
-        "pregunta": "¿Cual es el vuelo internacional más concurrido que hay en Pais Chiquitín?",
-        "imagen": "./img/test_jstrc/pregunta_16.png",
-        "respuestaCorrecta": "Ciudad Chiquin (ACN) a Seoul Incheon (ICN)",
-        "respuestaIncorrecta1": "Ciudad Chiquitin (CHN) a Tokyo Narita (NRT)",
-        "respuestaIncorrecta2": "Ciudad Chiquitín (CHN) a Madrid (MAD)",
-        "respuestaIncorrecta3": "Isla de Kai'Sa (KSA) a Sapporo Chitose (CTS)"
+        "pregunta": "¿Cual es la principal aerolinea de Hong Kong?",
+        "imagen": "https://cdn.jetphotos.com/full/5/76249_1520869225.jpg",
+        "respuestaCorrecta": "Cathay Pacific",
+        "respuestaIncorrecta1": "Hong Kong Airlines",
+        "respuestaIncorrecta2": "HK Express",
+        "respuestaIncorrecta3": "Air Hong Kong"
     },
     {
-        "pregunta": "¿Cual es el Boeing Customer Code de Air Chiquin?",
-        "imagen": "./img/test_jstrc/pregunta_17.png",
-        "respuestaCorrecta": "AC",
-        "respuestaIncorrecta1": "CA",
-        "respuestaIncorrecta2": "CH",
-        "respuestaIncorrecta3": "FA"
+        "pregunta": "¿Cual es la mayor aerolinea de carga del mundo?",
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Fedex%2C_Boeing_777F%2C_N856FD_and_UPS%2C_Boeing_747-400F%2C_N574UP%2C_Cologne_Bonn_Airport-7172.jpg/800px-Fedex%2C_Boeing_777F%2C_N856FD_and_UPS%2C_Boeing_747-400F%2C_N574UP%2C_Cologne_Bonn_Airport-7172.jpg",
+        "respuestaCorrecta": "FedEx Express",
+        "respuestaIncorrecta1": "United Parcel Services (UPS)",
+        "respuestaIncorrecta2": "DHL Aviation",
+        "respuestaIncorrecta3": "Lufthansa Cargo"
     },
     {
-        "pregunta": "¿Que avión es este?",
-        "imagen": "./img/test_jstrc/pregunta_18.png",
-        "respuestaCorrecta": "CHJ 520-800",
-        "respuestaIncorrecta1": "CHJ 520-100",
-        "respuestaIncorrecta2": "CHJ 500-800F",
-        "respuestaIncorrecta3": "CHJ 500-100"
+        "pregunta": "¿Que avión domestico en Japón tiene la mayor capacidad de pasajeros?",
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Boeing_747-481D%2C_All_Nippon_Airways_-_ANA_AN2271505.jpg/1024px-Boeing_747-481D%2C_All_Nippon_Airways_-_ANA_AN2271505.jpg",
+        "respuestaCorrecta": "Boeing 747-400D",
+        "respuestaIncorrecta1": "Boeing 747SR",
+        "respuestaIncorrecta2": "Boeing 777-300",
+        "respuestaIncorrecta3": "Airbus A350-900"
     },
     {
-        "pregunta": "¿Cual es la aerolinea más antigua (fundada en 1922)?",
-        "imagen": "./img/test_jstrc/pregunta_19.png",
-        "respuestaCorrecta": "Aerolineas Chiquitianas",
-        "respuestaIncorrecta1": "Chiquitin Airlines",
-        "respuestaIncorrecta2": "Chiquitin International Airlines",
+        "pregunta": "¿Cual ha sido el avión comercial que ha estado siendo fabricado sin interrupción desde su introducción?",
+        "imagen": "https://corporate.ryanair.com/wp-content/uploads/2017/03/ryanair-aircraft-9.jpg",
+        "respuestaCorrecta": "Boeing 737",
+        "respuestaIncorrecta1": "Boeing 767",
+        "respuestaIncorrecta2": "Airbus A320",
         "respuestaIncorrecta3": "CargoWatch"
     },
     {
-        "pregunta": "¿Cual es la aerolinea más reciente (fundada en 2023)?",
-        "imagen": "./img/test_jstrc/pregunta_20.png",
-        "respuestaCorrecta": "Lily Air",
-        "respuestaIncorrecta1": "Aloe Air",
-        "respuestaIncorrecta2": "Yellow Airlines",
-        "respuestaIncorrecta3": "Star Chiquin"
+        "pregunta": "¿El Airbus A350XWB ha tenido accidentes?",
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/JAPAN_AIRLINES_A350-941_JA13XJ_HND_30-APR-2022.jpg/1024px-JAPAN_AIRLINES_A350-941_JA13XJ_HND_30-APR-2022.jpg",
+        "respuestaCorrecta": "Si, aunque solo uno",
+        "respuestaIncorrecta1": "Si, varios",
+        "respuestaIncorrecta2": "No, solo incidentes graves",
+        "respuestaIncorrecta3": "No, solo incidentes leves"
     },
     {
-        "pregunta": "¿Cual es la principal aerolinea low-cost?",
-        "imagen": "./img/test_jstrc/pregunta_21.png",
-        "respuestaCorrecta": "Yellow Airlines",
-        "respuestaIncorrecta1": "Chiquitin Express",
-        "respuestaIncorrecta2": "Aloe Air",
-        "respuestaIncorrecta3": "Air Chiquin Express"
+        "pregunta": "¿Cual es el avión 'más potente' que hay en relación tamaño y motores?",
+        "imagen": "https://news.delta.com/sites/default/files/styles/fact_sheet_full_width_835px/public/2022-07/757_200_2.jpg?itok=sz7k9bN5",
+        "respuestaCorrecta": "El Boeing 757-200",
+        "respuestaIncorrecta1": "El Boeing 767-400ER",
+        "respuestaIncorrecta2": "El Airbus A330-200",
+        "respuestaIncorrecta3": "El Airbus A340-300"
     },
     {
-        "pregunta": "¿A que alianza pertenece Air Chiquin?",
-        "imagen": "./img/test_jstrc/pregunta_22.png",
-        "respuestaCorrecta": "OneWorld",
-        "respuestaIncorrecta1": "Star Alliance",
+        "pregunta": "¿Cual es la mayor alianza de aerolineas?",
+        "imagen": "https://images.ctfassets.net/m9ph4qvas97u/18XGOiSYu6mrArxY6S9GG9/d31da9e43beba1b10e916d39389616a2/201110_oneworld_alliance_skyteam_star_alliance.png",
+        "respuestaCorrecta": "Star Alliance",
+        "respuestaIncorrecta1": "OneWorld",
         "respuestaIncorrecta2": "Sky Team",
-        "respuestaIncorrecta3": "No esta en ninguna"
+        "respuestaIncorrecta3": "No existen las alianzas"
     },
     {
-        "pregunta": "¿Que aeropuerto es el que 'más restricciones' tiene actualmente para vuelos?",
-        "imagen": "./img/test_jstrc/pregunta_23.png",
-        "respuestaCorrecta": "Aeropuerto de la Isla del Vacío (KVS)",
-        "respuestaIncorrecta1": "Aeropuerto de la Isla de Bel'Veth (KBV)",
-        "respuestaIncorrecta2": "Aeropuerto de Chiquitín.S.A. (CHX)",
-        "respuestaIncorrecta3": "Aeropuerto del Valle Soleado (VSA)"
+        "pregunta": "¿En que aerolinea evolucionó CAAC (Civil Aviation Administration of China Airlines) en 1988?",
+        "imagen": "https://cdn.plnspttrs.net/29252/b-2803-caac-airlines-boeing-757-21b_PlanespottersNet_414629_639151cc21_o.jpg",
+        "respuestaCorrecta": "Air China",
+        "respuestaIncorrecta1": "China Eastern Airlines",
+        "respuestaIncorrecta2": "China Southern Airlines",
+        "respuestaIncorrecta3": "Shenzen Airlines"
     },
     {
-        "pregunta": "¿Pueden operar aerolineas extranjeras en el Aeropuerto de la Isla del Vacío?",
-        "imagen": "./img/test_jstrc/pregunta_24.png",
-        "respuestaCorrecta": "Si, All Nippon Airways y Japan Airlines",
-        "respuestaIncorrecta1": "No, no hay vuelos internacionales",
-        "respuestaIncorrecta2": "Si, unicamente puede Korean Air",
-        "respuestaIncorrecta3": "Si, no hay restricciones para ello"
+        "pregunta": "¿Los Boeing Customer Code siguen en funcionamiento?",
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Cathay_Pacific_Boeing_777-200%3B_B-HNL%40HKG.jpg/1280px-Cathay_Pacific_Boeing_777-200%3B_B-HNL%40HKG.jpg",
+        "respuestaCorrecta": "Se dejarón de usar en 2016",
+        "respuestaIncorrecta1": "Si, a los aviones como el 777F o el 767F",
+        "respuestaIncorrecta2": "Si, incluso a aviones como el Boeing 787 o el 737 MAX",
+        "respuestaIncorrecta3": "No, nunca se han usado"
     },
     {
-        "pregunta": "¿Cual es el avión más inseguro fabricado en Pais Chiquitín?",
-        "imagen": "./img/test_jstrc/pregunta_25.png",
-        "respuestaCorrecta": "C600-200D",
-        "respuestaIncorrecta1": "C600-100",
-        "respuestaIncorrecta2": "CHJ 500-100",
-        "respuestaIncorrecta3": "C400-500"
+        "pregunta": "¿En que se basa la nomeclatura extra en los aviones de Airbus (por ejemplo A320-271N)?",
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Lufthansa_Airbus_A320neo_%28D-AINC%29_at_Frankfurt_Airport.jpg/1280px-Lufthansa_Airbus_A320neo_%28D-AINC%29_at_Frankfurt_Airport.jpg",
+        "respuestaCorrecta": "El motor que llevan",
+        "respuestaIncorrecta1": "La versión del avión",
+        "respuestaIncorrecta2": "El Customer Code de Airbus",
+        "respuestaIncorrecta3": "Son numeros aleatorios"
     },
     {
         "pregunta": "¿Que avión es este?",
-        "imagen": "./img/test_jstrc/pregunta_26.png",
-        "respuestaCorrecta": "CHJ 560-700",
-        "respuestaIncorrecta1": "CHJ 700-100",
-        "respuestaIncorrecta2": "C400-800",
-        "respuestaIncorrecta3": "CHJ 600-100"
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/%EA%B3%B5%EC%A4%91%EC%A1%B0%EA%B8%B0%EA%B2%BD%EB%B3%B4%ED%86%B5%EC%A0%9C%EA%B8%B0_%287445565660%29.jpg/1280px-%EA%B3%B5%EC%A4%91%EC%A1%B0%EA%B8%B0%EA%B2%BD%EB%B3%B4%ED%86%B5%EC%A0%9C%EA%B8%B0_%287445565660%29.jpg",
+        "respuestaCorrecta": "Boeing E-7 Peace Eagle",
+        "respuestaIncorrecta1": "Boeing 737-700 AWACS",
+        "respuestaIncorrecta2": "Boeing KC-737",
+        "respuestaIncorrecta3": "ROKAF B-737"
     },
     {
-        "pregunta": "¿Que avión AEW&C ha producido Chiquitín.S.A. ultimamente?",
-        "imagen": "./img/test_jstrc/pregunta_27.png",
-        "respuestaCorrecta": "Chiquitín E-56 Sentinel (C400-300)",
-        "respuestaIncorrecta1": "Chiquitín E-60 Centurion (C400-300)",
-        "respuestaIncorrecta2": "Chiquitín P-43 Atlantis (C400-300)",
-        "respuestaIncorrecta3": "Chiquitín E-46 (C300-100), aún no ha desarrollado algo nuevo"
+        "pregunta": "¿Que aerolinea fue el cliente de lanzamiento del Boeing 737?",
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Boeing_737_N73700_%28P41313%29.jpg/1024px-Boeing_737_N73700_%28P41313%29.jpg",
+        "respuestaCorrecta": "Lufthansa",
+        "respuestaIncorrecta1": "United Airlines",
+        "respuestaIncorrecta2": "American Airlines",
+        "respuestaIncorrecta3": "British Airways"
     },
     {
-        "pregunta": "¿Que hay presente en la cola de los aviones destinados al transporte presidencial de la Republica de Chiquitín?",
-        "imagen": "./img/test_jstrc/pregunta_28.png",
-        "respuestaCorrecta": "ZA (Zulu Alpha) y la silueta de Chiquitín",
-        "respuestaIncorrecta1": "ZA (Zulu Alpha) y la región en la que esten basados",
-        "respuestaIncorrecta2": "La bandera de la republica unicamente",
-        "respuestaIncorrecta3": "Nada"
+        "pregunta": "¿Donde estaba la sede de Airbus Military?",
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Airbus_A400M_Rollout.JPG",
+        "respuestaCorrecta": "Madrid",
+        "respuestaIncorrecta1": "Toulose",
+        "respuestaIncorrecta2": "Hamburgo",
+        "respuestaIncorrecta3": "Sevilla"
     },
     {
-        "pregunta": "¿Que aerolinea ha mantenido más tiempo su imagen corporativa sin modificaciones?",
-        "imagen": "./img/test_jstrc/pregunta_29.png",
-        "respuestaCorrecta": "Air Chiquin",
-        "respuestaIncorrecta1": "Chiquitín Airlines",
-        "respuestaIncorrecta2": "Aerolineas Chiquitianas",
-        "respuestaIncorrecta3": "La ROChAF (Republic Of Chiquitín Air Force)"
+        "pregunta": "¿Por que se construyó la fabrica de Everett de Boeing?",
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Boeing_Everett_Plant.jpg/1280px-Boeing_Everett_Plant.jpg",
+        "respuestaCorrecta": "Para poder construir el Boeing 747",
+        "respuestaIncorrecta1": "Para poder aumentar la producción de aviones como el 737 o el 767",
+        "respuestaIncorrecta2": "Para poder construir el Boeing 777",
+        "respuestaIncorrecta3": "Para poder acomodar el 767, 777 y 787"
     },
     {
-        "pregunta": "¿Quien es el creador de TODOS los aviones de Chiquitín.S.A. y TODAS las aerolineas de Pais Chiquitín?",
-        "imagen": "./img/test_jstrc/pregunta_30.png",
-        "respuestaCorrecta": "daviddrm52",
-        "respuestaIncorrecta1": "Un conglomerado de gente",
-        "respuestaIncorrecta2": "Chiquitín",
-        "respuestaIncorrecta3": "Un usuario aleatorio"
+        "pregunta": "¿Donde se iba a fabricar el desparecido Mitsubishi SpaceJet?",
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/1/16/JA21MJ_TAXI_TEST.jpg",
+        "respuestaCorrecta": "Nagoya",
+        "respuestaIncorrecta1": "Osaka",
+        "respuestaIncorrecta2": "Fukuoka",
+        "respuestaIncorrecta3": "Sendai"
     }
 ]
