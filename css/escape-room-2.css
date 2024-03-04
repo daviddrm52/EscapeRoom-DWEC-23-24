@@ -19,7 +19,7 @@ body {
     margin-bottom: 75px;
 }
 
-button#iniciarExamenNacional, button#iniciarExamenInternacional, button#entrarEdificio, button#entrarExamen, button#mostrarClasificacion, button#volverInicio{
+button#iniciarExamenNacional, button#iniciarExamenInternacionalExcelente, button#iniciarExamenInternacionalAprobado, button#entrarEdificio, button#entrarExamen, button#mostrarClasificacion, button#volverInicio{
     display: block;
     margin-top: 10px;
     margin-left: auto;
@@ -48,7 +48,7 @@ button#cancelarExamen{
     display: none;
 }
 
-#resultadoExamenInternacional, #mensajeSuspensoNacional, #mensajeExcelenteNacional, #mensajeAprobadoNacional, #mensajeAbandonoNacional {
+#resultadoExamenInternacional, #mensajeSuspensoInternacional, #mensajeExcelenteInternacional, #mensajeAprobadoInternacional, #mensajeAbandonoInternacional {
     display: none;
 }
 

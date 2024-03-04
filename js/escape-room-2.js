@@ -38,14 +38,15 @@ const mensajeAprobadoNacional = document.getElementById("mensajeAprobadoNacional
 const mensajeExcelenteNacional = document.getElementById("mensajeExcelenteNacional");
 const mensajeAbandonoNacional = document.getElementById("mensajeAbandonoNacional");
 //Mensajes para el examen internacional
-const mensajeSuspensoInternacional = document.getElementById("mensajeSuspenso");
-const mensajeAprobadoInternacional = document.getElementById("mensajeAprobado");
-const mensajeExcelenteInternacional = document.getElementById("mensajeExcelente");
-const mensajeAbandonoInternacional = document.getElementById("mensajeAbandono");
+const mensajeSuspensoInternacional = document.getElementById("mensajeSuspensoInternacional");
+const mensajeAprobadoInternacional = document.getElementById("mensajeAprobadoInternacional");
+const mensajeExcelenteInternacional = document.getElementById("mensajeExcelenteInternacional");
+const mensajeAbandonoInternacional = document.getElementById("mensajeAbandonoInternacional");
+//Inicio de examenes
 const iniciarExamenNacional = document.getElementById("iniciarExamenNacional");
 const iniciarExamenInternacionalExcelente = document.getElementById("iniciarExamenInternacionalExcelente");
 const iniciarExamenInternacionalAprobado = document.getElementById("iniciarExamenInternacionalAprobado");
-const informacionJuego = document.getElementsByClassName("habitación-juego");
+// const informacionJuego = document.getElementsByClassName("habitación-juego");
 let nombreJugador = sessionStorage.getItem('nombreUsuario');
 var nombrePartidaNacional = "examen-"+nombreJugador+"-nacional";
 var nombrePartidaInternacional = "examen-"+nombreJugador+"-internacional";
@@ -103,9 +104,9 @@ function anadirJugadoresTabla(jugadores){
 //Funcion que comprueba la respuesta que el usuario ha escogido
 function compruebaRespuesta(respuestaSeleccionada){
     const preguntaActualNacional = preguntasJSTRCNacional[indicePreguntaActual];
-    const preguntaActualInternacional = preguntasJSTRCNacional[indicePreguntaActual];
+    const preguntaActualInternacional = preguntasJSTRCInternacional[indicePreguntaActual];
     if(versionExamen === "nacional") {
-        console.log(indicePreguntaActual, preguntasJSTRCNacional.length);
+        console.log(indicePreguntaActual, preguntasJSTRCNacional.length, "nacional");
         if(respuestaSeleccionada === preguntaActualNacional.respuestaCorrecta){
             respuestasCorrectas++;
             puntuacionExamen = puntuacionExamen + 100;
@@ -122,7 +123,7 @@ function compruebaRespuesta(respuestaSeleccionada){
             mostrandoPreguntaActualNacional();
         };
     } else if (versionExamen === "internacional") {
-        console.log(indicePreguntaActual, preguntasJSTRCInternacional.length);
+        console.log(indicePreguntaActual, preguntasJSTRCInternacional.length, "internacional");
         if(respuestaSeleccionada === preguntaActualInternacional.respuestaCorrecta){
             respuestasCorrectas++;
             puntuacionExamen = puntuacionExamen + 100;
@@ -193,7 +194,7 @@ function mostrandoResultadosNacional(){
             document.getElementById("examenJSTRC").style.display = "none";
             document.getElementById("resultadoExamenNacional").style.display = "block";
             estadoExamen = "Excelente";
-        } else if (respuestasIncorrectas > 25){
+        } else if (respuestasIncorrectas > 5){
             mensajeSuspensoNacional.style.display = "block";
             document.getElementById("resultadoExamenNacionalSuspenso").textContent = `Preguntas correctas: ${respuestasCorrectas}. Preguntas fallidas; ${respuestasIncorrectas}. Tiempo: ${tiempoTotal}. Puntuación: ${puntuacionExamen}`;
             document.getElementById("examenJSTRC").style.display = "none";
@@ -254,33 +255,33 @@ function mostrandoPreguntaActualInternacional(){
 };
 
 function mostrandoResultadosInternacional(){
-    console.log("Examen finalizado, mostrando resultados...");
+    console.log("Examen internacional finalizado, mostrando resultados...");
     var estadoExamen;
     clearInterval(cronometro);
     if(examenCancelado){
-        mensajeAbandono.style.display = "block";
-        document.getElementById("resultadoExamenAbandonado").textContent = `Preguntas correctas: ${respuestasCorrectas}. Preguntas fallidas; ${respuestasIncorrectas}. Tiempo: ${tiempoTotal}. Puntuación: ${puntuacionExamen}`;
+        mensajeAbandonoInternacional.style.display = "block";
+        document.getElementById("resultadoExamenInternacionalAbandonado").textContent = `Preguntas correctas: ${respuestasCorrectas}. Preguntas fallidas; ${respuestasIncorrectas}. Tiempo: ${tiempoTotal}. Puntuación: ${puntuacionExamen}`;
         document.getElementById("examenJSTRC").style.display = "none";
-        document.getElementById("resultadoExamen").style.display = "block";
+        document.getElementById("resultadoExamenInternacional").style.display = "block";
         estadoExamen = "No finalizado";
     } else {
-        if(respuestasCorrectas > 1/*=== preguntasJSTRCNacional.length*/){
-            mensajeExcelente.style.display = "block"
-            document.getElementById("resultadoExamenExcelente").textContent = `Preguntas correctas: ${respuestasCorrectas}. Preguntas fallidas; ${respuestasIncorrectas}. Tiempo: ${tiempoTotal}. Puntuación: ${puntuacionExamen}`;
+        if(respuestasCorrectas === preguntasJSTRCNacional.length){
+            mensajeExcelenteInternacional.style.display = "block"
+            document.getElementById("resultadoExamenInternacionalExcelente").textContent = `Preguntas correctas: ${respuestasCorrectas}. Preguntas fallidas; ${respuestasIncorrectas}. Tiempo: ${tiempoTotal}. Puntuación: ${puntuacionExamen}`;
             document.getElementById("examenJSTRC").style.display = "none";
-            document.getElementById("resultadoExamen").style.display = "block";
+            document.getElementById("resultadoExamenInternacional").style.display = "block";
             estadoExamen = "Excelente";
         } else if (respuestasIncorrectas > 5){
-            mensajeSuspenso.style.display = "block";
-            document.getElementById("resultadoExamenSuspenso").textContent = `Preguntas correctas: ${respuestasCorrectas}. Preguntas fallidas; ${respuestasIncorrectas}. Tiempo: ${tiempoTotal}. Puntuación: ${puntuacionExamen}`;
+            mensajeSuspensoInternacional.style.display = "block";
+            document.getElementById("resultadoExamenInternacionalSuspenso").textContent = `Preguntas correctas: ${respuestasCorrectas}. Preguntas fallidas; ${respuestasIncorrectas}. Tiempo: ${tiempoTotal}. Puntuación: ${puntuacionExamen}`;
             document.getElementById("examenJSTRC").style.display = "none";
-            document.getElementById("resultadoExamen").style.display = "block";
+            document.getElementById("resultadoExamenInternacional").style.display = "block";
             estadoExamen = "Suspenso";
         } else {
-            mensajeAprobado.style.display = "block"
+            mensajeAprobadoInternacional.style.display = "block"
             document.getElementById("resultadoExamenAprobado").textContent = `Has aprobado, bien hecho. Preguntas correctas: ${respuestasCorrectas}. Preguntas fallidas; ${respuestasIncorrectas}. Tiempo: ${tiempoTotal}. Puntuación: ${puntuacionExamen}`;
             document.getElementById("examenJSTRC").style.display = "none";
-            document.getElementById("resultadoExamen").style.display = "block";
+            document.getElementById("resultadoExamenInternacional").style.display = "block";
             estadoExamen = "Aprobado";
         };
     };
@@ -311,6 +312,7 @@ function iniciarExamenInternacional() {
     cronometro = setInterval(cronometroExamen, 1000);
     document.getElementById("examenJSTRC").style.display = "block";
     document.getElementById("informacion-juego").style.display = "none";
+    document.getElementById("resultadoExamenNacional").style.display = "none";
     mostrandoPreguntaActualInternacional();
 };
 
@@ -332,8 +334,12 @@ document.getElementById("entrarExamen").addEventListener("click", () => {
 document.getElementById("cancelarExamen").addEventListener("click", () => {
     examenCancelado = true;
     puntuacionExamen = 0;
-    mostrandoResultados();
-})
+    if(versionExamen == "internacional") {
+        mostrandoResultadosInternacional();
+    } else if (versionExamen == "nacional") {
+        mostrandoResultadosNacional();
+    }
+});
 
 //Boton para mostrar la clasificacion de jugadores
 document.getElementById("mostrarClasificacion").addEventListener("click", () => {
