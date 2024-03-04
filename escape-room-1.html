@@ -47,21 +47,17 @@
             <p>La prensa esta muy agresiva con este tema, y el publico general tiene miedo de volar en el C600-200D.</p>
             <p>Air Chiquin y Aerolineas Chiquitianas, los dos unicos operadores del C600-200D, han dejado el avión en tierra hasta que se encuentre la causa.</p>
             <p>En fin, hay que encontrar ya la causa, porque esto se nos irá de las manos...</p>
-            <button id="entrarHabitacionSospechoso">Entrar en la habitación del sospechoso</button>
+            <a href="./misc/accesoNoAutorizado.html"><button id="entrarHabitacionSospechoso">Entrar en la habitación del sospechoso</button></a>
         </div>
-        <div class="habitacion-juego" id="comedorCasa">
-            <h2>Comedor de la casa</h2>
-            <map name="salon_casa_sospechoso">
-                <area shape="rect" coords="" onclick="alert('En el baño no hay nada')">
-            </map>
-            <img src="./img/flight_482/salon_casa_sospechoso.png" usemap="salon_casa_sospechoso" width="700px">
-        </div>
-        <div class="habitacion-juego" id="cocinaCasa">
-            <h2>Cocina de la casa</h2>
-            <map name="cocina_casa_sospechoso">
-                <area shape="rect" coords="0,0, 100, 395" onclick="alert('En el baño no hay nada')">
-            </map>
-            <img src="./img/flight_482/cocina_casa_sospechoso.png" usemap="#cocina_casa_sospechoso" width="700px">
+        <!-- 
+
+            ACCESO NO AUTORIZADO
+
+            Información sensible eliminada por el SNI
+
+         -->
+        <div class="habitacion-juego" id="mostrarPistas">
+            <button id="botonMostrarPistas">Mostrar las pistas que llevas encima</button>
         </div>
         <div class="habitacion-juego" id="pistasAccidente">
             <h3>Archivos de la investigación que llevas encima</h3>
@@ -79,6 +75,7 @@
             </ul>
             <h4>CVR del vuelo en un cassete portatil</h4>
             <audio src="./audio/JL_123_CVR_japanese.mp3" controls></audio>
+            <button id="botonOcultarPistas">Ocultar pistas</button>
         </div>
     </main>
     <footer>
@@ -89,7 +86,7 @@
                     <li><a id="linkInicioSesionFooter" href="./sign-in.html">Iniciar sesión</a></li>
                     <li><a href="./about.html">Sobre nosotros</a></li>
                     <li><a href="./info-escape-rooms.html">Escape rooms disponibles</a></li>
-                    <li><a href="#">Sección de administración</a></li>
+                    <li><a href="./administracion.html">Sección de administración</a></li>
                 </ul>
             </div>
             <div class="info-footer">
@@ -99,7 +96,7 @@
             </div>
         </div>
     </footer>
-    <!-- <script src="./js/escape-room-1.js"></script> -->
-    <!-- <script src="./js/usuario-conectado.js"></script> -->
+    <script src="./js/escape-room-1.js"></script>
+    <script src="./js/usuario-conectado.js"></script>
 </body>
 </html>

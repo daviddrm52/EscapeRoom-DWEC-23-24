@@ -5,3 +5,22 @@ if (usuarioIniciado == null){
 } else {
     console.log("Identificador del usuario: "+usuarioIniciado);
 }
+
+/* Event Listeners */
+document.getElementById("continuarInvestigacion").addEventListener("click", () => {
+    document.getElementById("introduccion").style.display = "none";
+    document.getElementById("visualizacionAccidente").style.display = "block";
+});
+
+document.getElementById("botonMostrarPistas").addEventListener("click", () => {
+    document.getElementById("pistasAccidente").style.display = "block";
+    document.getElementById("mostrarPistas").style.display = "none";
+});
+
+document.getElementById("botonOcultarPistas").addEventListener("click", () => {
+    document.getElementById("pistasAccidente").style.display = "none";
+    document.getElementById("mostrarPistas").style.display = "block";
+});
+
+
+

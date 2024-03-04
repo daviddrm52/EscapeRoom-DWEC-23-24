@@ -1,0 +1,24 @@
+.advertencia {
+    width: 700px;
+    background-color: #EFEFEF;
+    margin: 0 auto;
+    text-align: center;
+}
+
+button {
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border: transparent;
+    background-color: #B4001D;
+    color: #FFFFFF;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+a{
+    color: #FFFFFF;
+    text-decoration: none;
+}

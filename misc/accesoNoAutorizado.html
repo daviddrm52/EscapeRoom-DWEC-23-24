@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso no autorizado detectado</title>
+    <link rel="stylesheet" href="./accesoNoAutorizado.css">
+</head>
+<body>
+    <main>
+        <div class="advertencia">
+            <img src="" alt="unauthorized-access-image" width="300px">
+            <p>Se ha detectado un acceso no autorizado desde una región no adherida a la Republica de Chiquitín.</p>
+            <p>Usted se encuentra en <i>INFORMACIÓN REDACTADA POR SEGURIDAD</i></p>
+            <p>Hora del acceso: <i id="horaAcceso"></i></p>
+            <p>Nivel de los datos a los que se intentan acceder: Nivel 4</p>
+            <p>Si se detectan más conexiones de esta dirección, el Servicio Nacional de Inteligencia activará el procedimiento de defensa ante "Intento de robo de datos sensibles de la Republica"</p>
+        </div>
+        <a href="./../index.html"><button>Volver a la pagina anterior</button></a>
+    </main>
+    <script>
+        let horaAcceso = document.getElementById("horaAcceso");
+        let tiempo = new Date();
+        horaAcceso.innerHTML = tiempo;
+    </script>
+</body>
+</html>

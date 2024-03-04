@@ -17,7 +17,7 @@ body {
     color: #FFFFFF;
 }
 
-button#continuarInvestigacion, button#entrarHabitacionSospechoso{
+button#continuarInvestigacion, button#entrarHabitacionSospechoso, button#botonMostrarPistas, button#botonOcultarPistas{
     display: block;
     margin-top: 10px;
     margin-left: auto;
@@ -27,6 +27,11 @@ button#continuarInvestigacion, button#entrarHabitacionSospechoso{
     background-color: #F77700;
     border-radius: 5px;
     cursor: pointer;
+}
+
+a{
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 .habitacion-juego i{
@@ -42,4 +47,8 @@ button#continuarInvestigacion, button#entrarHabitacionSospechoso{
 
 .imagen img {
     width: 450px;
+}
+
+#visualizacionAccidente, #accesoNoAutorizado, #pistasAccidente {
+    display: none;
 }

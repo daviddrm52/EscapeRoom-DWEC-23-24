@@ -44,7 +44,7 @@
             </article>
             <a href="./escape-room-1.html"><button>Entrar en "El culpable del vuelo 482 de Air Chiquin"</button></a>
         </div>
-        <div class="info-escape-rooms">
+        <div class="info-escape-rooms" id="jstrc-exam">
             <h2>La prueba para darte a conocer en la JSTRC</h2>
             <div>
                 <img src="./img/info-escape-rooms/test_jstrc_2.png" alt="CHN780JA" width="75%">
@@ -59,21 +59,33 @@
                 <p>Ahora estas en las oficinas de la división de aviación de la JSTRC, al lado del Aeropuerto del Valle Soleado (VSA).</p>
                 <p>La división de aviación de la JSTRC es uno de los trabajos mejor pagados, su funcion es, si ocurre un incidente con un avión en el pais, o un avión fabricado en Pais Chiquitín, son los responsables en descubrir que ha ocurrido exactamente.</p>
                 <h3>Información previa</h3>
-                <p>Hay que disponer de conocimientos basicos de aviación comercial de Pais Chiquitín para la primera parte, y para la segunda conocimientos de aviación comercial en general</p>
+                <p>Hay que disponer de conocimientos basicos de aviación comercial de Pais Chiquitín para la primera parte, y para la segunda conocimientos de aviación comercial en general.</p>
+                <p>Puede probar el juego que hay en la pagina sobre un ahorcado.</p>
                 <h3>Objetivo del escape room</h3>
                 <p>El objetivo es conseguir pasar la pruebas para poder darte a conocer en la JSTRC, ya que <b>es uno de los empleos mejor valorados</b> en País Chiquitín</p>
             </article>
             <a href="./escape-room-2.html"><button>Entrar en "La prueba para darte a conocer en la JSTRC"</button></a>
-
+            <div class="habitacion-juego" id="clasificaciones">
+                <h2>Revisar resultados de usuarios que lo han intentado</h2>
+                <button id="mostrarClasificacion">Mirar tabla de clasificación</button>
+                <div id="tablaClasificacion">
+                    <table id="tabla-jugadores"></table>
+                </div>
+            </div>
         </div>
-        <div class="info-escape-rooms">
+        <div class="info-escape-rooms" id="hanged-game-1">
             <h1>Juegos para pasar el rato</h1>
-        </div>
-        <div class="info-escape-rooms">
             <h2>Ahorcado de aerolineas de la Republica de Chiquitín</h2>
+            <div>
+                <img src="./img/info-escape-rooms/ahorcado_preview2.png" alt="CHN100AX" width="75%">
+                <p><i>CHJ 560-721 de Air Chiquin en vuelo (CHN100AX)</i></p>
+            </div>
             <article>
-                Articulo en desarrollo...
+                <h3>22 de octubre de 2023 - 18:44 (UTC+09:00)</h3>
+                <p>Has descubierto una pagina de un "ahorcado" con tematica de aerolineas de País Chiquitín, esto te interesa ya que en 2 dias tienes el examen de prueba de la JSTRC</p>
+                <p><i>Mmm, suena interesante, probare a ver como me va, no creo que sea tan dificil...</i></p>
             </article>
+            <a href="./juego-1-ahorcado.html"><button>Entrar en "Ahorcado tematica aerolineas de la Republica de Chiquitín"</button></a>
         </div>
     </main>
     <footer>
@@ -84,7 +96,7 @@
                     <li><a id="linkInicioSesionFooter" href="./sign-in.html">Iniciar sesión</a></li>
                     <li><a href="./about.html">Sobre nosotros</a></li>
                     <li><a href="./info-escape-rooms.html">Escape rooms disponibles</a></li>
-                    <li><a href="#">Sección de administración</a></li>
+                    <li><a href="./administracion.html">Sección de administración</a></li>
                 </ul>
             </div>
             <div class="info-footer">
@@ -94,7 +106,7 @@
             </div>
         </div>
     </footer>
-    <script src="./js/index.js"></script>
+    <script src="./js/info-escape-rooms.js"></script>
     <script src="./js/usuario-conectado.js"></script>
 </body>
 </html>

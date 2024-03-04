@@ -34,3 +34,32 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
+
+#tablaClasificacion {
+    padding: 10px;
+    display: none;
+
+}
+
+table{
+    text-align: center;
+    border: 2px solid #FFFFFF;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+th{
+    padding: 5px;
+    border: 2px solid #B4001D;
+    height: 30px;
+}
+
+td {
+    padding: 5px;
+    border: 2px solid #FFFFFF;
+    height: 30px;
+}
+
+td:hover{
+    background-color: #F7A500;
+}

@@ -200,10 +200,12 @@ function anadirEstadisticas(){
 
 //Funcion para verificar que hay un usuario conectado
 function verificarUsuarioConectado() {
-    if(sessionStorage.getItem('id') == null){
-        window.location.replace("./index.html");
+    //Para verificar que el usuario ha iniciado sesión, solo se puede acceder si se ha iniciado sesión
+    var usuarioIniciado = sessionStorage.getItem("id");
+    if (usuarioIniciado == null){
+        window.location.replace("./sign-in.html");
     } else {
-        console.log("Usuario conectado, dejando pasar...");
+        console.log("Identificador del usuario: "+usuarioIniciado);
     }
 }
 
