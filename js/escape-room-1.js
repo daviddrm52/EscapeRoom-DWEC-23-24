@@ -12,6 +12,20 @@ document.getElementById("continuarInvestigacion").addEventListener("click", () =
     document.getElementById("visualizacionAccidente").style.display = "block";
 });
 
+//Boton para mostrar instrucciones
+document.getElementById("mostrarInstrucciones").addEventListener("click", () => {
+    document.getElementById("introduccion").style.display = "none";
+    document.getElementById("mostrarPistas").style.display = "none";
+    document.getElementById("instrucciones").style.display = "block";
+});
+
+//Boton para cerrar las instrucciones
+document.getElementById("cerrarInstrucciones").addEventListener("click", () => {
+    document.getElementById("introduccion").style.display = "block";
+    document.getElementById("mostrarPistas").style.display = "block";
+    document.getElementById("instrucciones").style.display = "none";
+});
+
 document.getElementById("botonMostrarPistas").addEventListener("click", () => {
     document.getElementById("pistasAccidente").style.display = "block";
     document.getElementById("mostrarPistas").style.display = "none";

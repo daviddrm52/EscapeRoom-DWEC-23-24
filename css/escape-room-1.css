@@ -17,7 +17,7 @@ body {
     color: #FFFFFF;
 }
 
-button#continuarInvestigacion, button#entrarHabitacionSospechoso, button#botonMostrarPistas, button#botonOcultarPistas{
+button#mostrarInstrucciones, button#cerrarInstrucciones, button#continuarInvestigacion, button#entrarHabitacionSospechoso, button#botonMostrarPistas, button#botonOcultarPistas{
     display: block;
     margin-top: 10px;
     margin-left: auto;
@@ -49,6 +49,6 @@ a{
     width: 450px;
 }
 
-#visualizacionAccidente, #accesoNoAutorizado, #pistasAccidente {
+#visualizacionAccidente, #pistasAccidente, #instrucciones {
     display: none;
 }

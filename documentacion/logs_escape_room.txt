@@ -1,0 +1,8 @@
+Diario de desarrollo no disponible, para poder ver los avances, ver commits de git:
+
+https://github.com/daviddrm52/EscapeRoom-DWEC-23-24/commits/main/
+
+Principalmente, ha habido desarrollo desde el 22 de enero hasta el 5 de marzo.
+Exceptuando algunos dias que no se ha podido avanzar por motivos que escapan de mi alcance.
+
+Soy consciente de que hay fallos de ortografia en los html, no he dispuesto del tiempo de hacer correciones.

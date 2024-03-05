@@ -331,6 +331,18 @@ document.getElementById("entrarExamen").addEventListener("click", () => {
     document.getElementById("informacion-juego").style.display = "block";
 });
 
+//Boton para mostrar instrucciones
+document.getElementById("mostrarInstrucciones").addEventListener("click", () => {
+    document.getElementById("exteriorJuego").style.display = "none";
+    document.getElementById("instrucciones").style.display = "block";
+});
+
+//Boton para cerrar las instrucciones
+document.getElementById("cerrarInstrucciones").addEventListener("click", () => {
+    document.getElementById("exteriorJuego").style.display = "block";
+    document.getElementById("instrucciones").style.display = "none";
+});
+
 //Boton para cancelar e irte a casa
 document.getElementById("cancelarExamen").addEventListener("click", () => {
     examenCancelado = true;
