@@ -194,7 +194,7 @@ function mostrandoResultadosNacional(){
             document.getElementById("examenJSTRC").style.display = "none";
             document.getElementById("resultadoExamenNacional").style.display = "block";
             estadoExamen = "Excelente";
-        } else if (respuestasIncorrectas > 5){
+        } else if (respuestasIncorrectas > 25){
             mensajeSuspensoNacional.style.display = "block";
             document.getElementById("resultadoExamenNacionalSuspenso").textContent = `Preguntas correctas: ${respuestasCorrectas}. Preguntas fallidas; ${respuestasIncorrectas}. Tiempo: ${tiempoTotal}. Puntuación: ${puntuacionExamen}`;
             document.getElementById("examenJSTRC").style.display = "none";
@@ -279,7 +279,7 @@ function mostrandoResultadosInternacional(){
             estadoExamen = "Suspenso";
         } else {
             mensajeAprobadoInternacional.style.display = "block"
-            document.getElementById("resultadoExamenAprobado").textContent = `Has aprobado, bien hecho. Preguntas correctas: ${respuestasCorrectas}. Preguntas fallidas; ${respuestasIncorrectas}. Tiempo: ${tiempoTotal}. Puntuación: ${puntuacionExamen}`;
+            document.getElementById("resultadoExamenInternacionalAprobado").textContent = `Has aprobado, bien hecho. Preguntas correctas: ${respuestasCorrectas}. Preguntas fallidas; ${respuestasIncorrectas}. Tiempo: ${tiempoTotal}. Puntuación: ${puntuacionExamen}`;
             document.getElementById("examenJSTRC").style.display = "none";
             document.getElementById("resultadoExamenInternacional").style.display = "block";
             estadoExamen = "Aprobado";
@@ -309,6 +309,7 @@ function iniciarExamenInternacional() {
     puntuacionExamen = 0;
     examenCancelado = false;
     tiempoExamen.innerHTML  = "00:00:00";
+    fechaActual.setHours(0,0,0,0);
     cronometro = setInterval(cronometroExamen, 1000);
     document.getElementById("examenJSTRC").style.display = "block";
     document.getElementById("informacion-juego").style.display = "none";
